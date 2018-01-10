@@ -6,7 +6,8 @@ const urlScraper = (req, res) => {
   const { url } = req.body;
 
   if(url.includes('bbcgoodfood')) bbcgf(url, req, res);
-  if(url.includes('jamieoliver')) jamieoliver(url, req, res);
+  else if(url.includes('jamieoliver')) jamieoliver(url, req, res);
+
 };
 
 module.exports = urlScraper;

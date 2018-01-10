@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 
 const bbcgf = (url, req, res) => {
 
-  request(url, (error, response, body) => {
+  request(url, function (error, response, body) {
 
     const $ = cheerio.load(body);
     const ingredients = [];
