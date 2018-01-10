@@ -22,4 +22,6 @@ CREATE TABLE recipes (
     dateCreated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+INSERT INTO users (name, email, password) VALUES ('Mike', 'mike@gmail.com','$2a$10$HEyV6U.nsK.0I4ICu.2tZO.Le09Kt0ni8Wl4NJChqDnvWVKDwptCq'), ('Jim', 'jim@gmail.com', '$2a$10$HEyV6U.nsK.0I4ICu.2tZO.Le09Kt0ni8Wl4NJChqDnvWVKDwptCq');
+
 COMMIT;
