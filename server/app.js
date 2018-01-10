@@ -3,10 +3,8 @@ const app = express();
 const path = require('path');
 const routes = require('./controllers/routes');
 
-//middleware
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
-const passport = require('passport');
 
 app.set('port', process.env.PORT || 3001);
 app.use(bodyParser.urlencoded({extended: false}));
