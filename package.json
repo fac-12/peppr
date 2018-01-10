@@ -25,6 +25,7 @@
     "dependencies": {
         "bcrypt-nodejs": "0.0.3",
         "body-parser": "^1.18.2",
+        "cheerio": "^1.0.0-rc.2",
         "cookie-session": "^2.0.0-beta.3",
         "env2": "^2.2.0",
         "express": "^4.16.2",
@@ -32,6 +33,7 @@
         "passport": "^0.4.0",
         "passport-local": "^1.0.0",
         "pg-promise": "^7.3.2",
+        "request": "^2.83.0",
         "url": "^0.11.0"
     }
 }
