@@ -5,6 +5,12 @@ const getUser = email => {
   .then(user => user[0])
 }
 
+const addUser = (name, email, password) => {
+  return db.query(`INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING NAME, ID`, [name, email, password])
+  .then(user => user[0])
+}
+
 module.exports = {
-  getUser
+  getUser,
+  addUser
 }
