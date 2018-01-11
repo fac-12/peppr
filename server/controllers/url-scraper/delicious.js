@@ -6,23 +6,27 @@ const delicious = (url, req, res) => {
   request(url, (error, response, body) => {
 
     const $ = cheerio.load(body);
-    const ingredients = [];
-    const method = [];
+    const title = $('h1.post-title').text();
+    let ingredients = '';
+    let method = '';
 
     $('.ingredient-box .content ul li').each((index, element) => {
-      ingredients[index] = $(element).text().trim()
+      ingredients += $(element).text().trim() + '\n'
     });
 
     $('ol li').each((index, element) => {
-      method[index] = $(element).text().trim()
+      method += $(element).text().trim() + '\n\n'
     })
 
     const imageUrl = `${$('.attachment-recipes-featured').attr('src')}`;
+    const tags ='';
 
     const scrapedRecipe = {
-      imageUrl,
+      title,
       ingredients,
-      method
+      method,
+      imageUrl,
+      tags
     }
 
     res.status(200).send(scrapedRecipe);

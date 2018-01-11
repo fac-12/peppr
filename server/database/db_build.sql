@@ -19,6 +19,7 @@ CREATE TABLE recipes (
     imgUrl VARCHAR(200),
     ingredients TEXT,
     method TEXT,
+    tags VARCHAR(100),
     dateCreated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 

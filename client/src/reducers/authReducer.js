@@ -6,9 +6,9 @@ export default (state = null, action) => {
       const res = action.payload || false;
       return { ...state, authenticated: res, error: ''};
     case AUTH_USER:
-      return { ...state, authenticated: true, error: ''};  
-    case AUTH_ERROR: 
-      return { ...state, error: action.payload};    
+      return { ...state, authenticated: true, error: ''};
+    case AUTH_ERROR:
+      return { ...state, error: action.payload};
     default:
       return state;
   }
