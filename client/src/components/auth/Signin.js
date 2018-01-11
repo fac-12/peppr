@@ -25,6 +25,7 @@ class SignIn extends Component {
             className='loginInput'
             component={this.renderField}
           />
+          {this.renderAlert()}  
           <input type="submit" defaultValue="Login" className="loginBtn"/>
         </form>
         <p className="signupRedirect">New to Peppr? Sign up</p>
@@ -32,6 +33,7 @@ class SignIn extends Component {
 
     )
   }
+
   renderField(field) {
     const { className, meta: { touched, error}} = field;
     return ([
@@ -46,8 +48,19 @@ class SignIn extends Component {
       </div>
      ])
   }
+
   handleFormSubmit(values) {
     this.props.signinUser(values)
+  }
+
+  renderAlert(){
+    if (this.props.error){
+      return (
+          <p>
+            <strong>Oops!</strong> {this.props.error}
+          </p>
+      );
+    } 
   }
 }
 

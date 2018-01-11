@@ -25,7 +25,7 @@ exports.signUp = (req, res) => {
   .getUser(email)
   .then(user => {
     if(user){
-      return res.status(422).send({ error: 'Email is in use, please sign in'})
+      return res.status(422).send({ error: 'Email is in use'})
     }
     return hashPassword(password)
   })

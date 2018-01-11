@@ -47,7 +47,7 @@ export const signinUser = values => {
       history.push('/recipes')
     })
     .catch(error => {
-      dispatch(authError('Username or password was incorrect'));
+      dispatch(authError('Email or password was incorrect'));
     })
   }
 }

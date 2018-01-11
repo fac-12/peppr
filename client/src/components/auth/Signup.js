@@ -32,10 +32,12 @@ class SignUp extends Component {
           placeholder='Confirm password'
           component={this.renderField}
         />
+        {this.renderAlert()}  
         <input type="submit" defaultValue="submit"/>
       </form>
     )
   }
+
   renderField(field) {
     const { meta: { touched, error}} = field;
     return ([
@@ -49,8 +51,19 @@ class SignUp extends Component {
       </div>
      ])
   }
+
   handleFormSubmit(values) {
     this.props.signupUser(values)
+  }
+
+  renderAlert(){
+    if (this.props.error){
+      return (
+          <p>
+            <strong>Oops!</strong> {this.props.error}
+          </p>
+      );
+    } 
   }
 }
 
@@ -64,9 +77,11 @@ const validate = values => {
   return errors;
 }
 
+const mapStateToProps = state => ({ error: state.error })
+
 export default reduxForm ({
   validate,
   form: 'signup'
 })(
-  connect (null, { signupUser })(SignUp)
+  connect (mapStateToProps, { signupUser })(SignUp)
 )
