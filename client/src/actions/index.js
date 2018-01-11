@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_USER, AUTH_USER, AUTH_ERROR } from './types'
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR } from './types'
 
 export const getUser = () => {
   return(dispatch) => {
@@ -8,11 +8,14 @@ export const getUser = () => {
     })
     .then(response => {
       dispatch({
-        type: GET_USER,
-        payload: response.data
+        type: AUTH_USER
       })
     })
-    .catch(err => console.log)
+    .catch(err => {
+      dispatch({
+        type: UNAUTH_USER
+      })
+    })
   }
 }
 
@@ -20,7 +23,9 @@ export const signupUser = values => {
   return dispatch => {
     axios.post('/signup', values)
     .then(response => {
-      dispatch({type: AUTH_USER})
+      dispatch({
+        type: AUTH_USER
+      })
       localStorage.setItem('token', response.data.token)
     })
     .catch(error => {
@@ -33,7 +38,9 @@ export const signinUser = values => {
   return dispatch => {
     axios.post('/signin', values)
     .then(response => {
-      dispatch({type: AUTH_USER})
+      dispatch({
+        type: AUTH_USER
+      })
       localStorage.setItem('token', response.data.token)
     })
     .catch(error => {

@@ -8,6 +8,7 @@ class Landing extends Component {
       <div>
         <SignUp />
         {/* <SignIn /> */}
+
       </div>
     );
   }
