@@ -5,8 +5,9 @@ import { signupUser } from '../actions/index';
 
 class SignUp extends Component {
   render() {
+    const { handleSubmit } = this.props;
     return (
-      <form>
+      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
         <Field
           name='name'
           type='text'
@@ -31,7 +32,7 @@ class SignUp extends Component {
           placeholder='Confirm password'
           component={this.renderField}
         />
-        <input type="Submit" defaultValue="Submit"/>
+        <input type="submit" defaultValue="submit"/>
       </form>
     )
   }
@@ -47,6 +48,9 @@ class SignUp extends Component {
         {touched ? error : ''}
       </div>
      ])
+  }
+  handleFormSubmit(values) {
+    this.props.signupUser(values)
   }
 }
 

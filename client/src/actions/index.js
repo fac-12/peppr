@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_USER } from './types'
+import { GET_USER, AUTH_USER } from './types'
 
 export const getUser = () => {
   return(dispatch) => {
@@ -16,6 +16,14 @@ export const getUser = () => {
   }
 }
 
-export const signupUser = () => {
-
+export const signupUser = values => {
+  return dispatch => {
+    axios.post('/signup', values)
+    .then(response => {
+      console.log(response.data.token)
+      dispatch({type: AUTH_USER})
+      localStorage.setItem('token', response.data.token)
+    })
+    .catch(console.log)
+  }
 }
