@@ -16,7 +16,7 @@ export const checkUrl = (values) => {
 
 export const addRecipe = (values, callback) => {
   return(dispatch) => {
-    axios.post('/addnewrecipe', values)
+    axios.post('/addnewrecipe', values, {  headers: {authorization: localStorage.getItem('token')}})
     .then(response => {
       dispatch({
         type: ADD_RECIPE,

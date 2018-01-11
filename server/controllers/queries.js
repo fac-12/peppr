@@ -15,10 +15,9 @@ const addUser = (name, email, password) => {
   .then(user => user[0])
 }
 
-const addRecipe = (title, ingredients, method, imageUrl, tags, userId)=> {
-  return db.query(`INSERT INTO recipes(userId, title, imgUrl, ingredients, method, tags) VALUES ($1, $2, $3, $4, $5, $6)`,[userId, title, imageUrl, ingredients, methods, tags])
+const addRecipe = (userId, title, ingredients, method, imageUrl, tags)=> {
+  return db.query(`INSERT INTO recipes (userId, title, imgUrl, ingredients, method, tags) VALUES ($1, $2, $3, $4, $5, $6)`, [userId, title, imageUrl, ingredients, method, tags])
 }
-
 
 module.exports = {
   getUser,

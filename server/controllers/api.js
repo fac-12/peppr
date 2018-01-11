@@ -3,7 +3,8 @@ const queries = require( './queries');
 
 exports.addRecipe = (req,res) => {
   const { title, ingredients, method, imageUrl, tags } = req.body;
-  const userId = req.user;
+  const { id } = req.user;
+
 
   //validate
   if(!title || !ingredients || !method ){
@@ -11,7 +12,7 @@ exports.addRecipe = (req,res) => {
   }
 
   queries
-  .addRecipe(title, ingredients, method, imageUrl, tags, userId)
+  .addRecipe(id, title, ingredients, method, imageUrl, tags)
   .then(()=>{
     res.status(200).send();
   })
