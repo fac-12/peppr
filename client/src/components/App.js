@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Landing from './Landing';
+import AddRecipe from './addrecipe/AddRecipe';
+import Recipes from './Recipes';
 
 
 class App extends Component {
@@ -12,6 +14,8 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Route exact path="/" component={Landing} />
+            <Route exact path="/recipes" component={Recipes} />
+            <Route exact path="/addrecipe" component={AddRecipe} />
           </div>
         </BrowserRouter>
     );

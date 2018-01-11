@@ -5,23 +5,30 @@ const jamieoliver = (url, req, res) => {
 
   request(url, (error, response, body) => {
 
+    // NEED TO DO ERROR HANDLING
+
     const $ = cheerio.load(body);
-    const ingredients = [];
-    const method = [];
+
+    const title = $('h1.hidden-xs').text();
+    let ingredients = '';
+    let method = '';
 
     $('.ingred-list').children().each((index, element) => {
       const regex = /\S+/gi;
-      ingredients[index] = $(element).text().match(regex).join(' ');
+      ingredients += $(element).text().match(regex).join(' ') + '\n';
     });
 
-    $('.recipeSteps').children().each((index, element) => method[index] = $(element).text().trim());
+    $('.recipeSteps').children().each((index, element) => method += $(element).text().trim() + '\n\n');
 
     const imageUrl = `http:${$('picture > source')['0'].attribs.srcset}`;
+    const tags = '';
 
     const scrapedRecipe = {
-      imageUrl,
+      title,
       ingredients,
-      method
+      method,
+      imageUrl,
+      tags
     }
 
     res.status(200).send(scrapedRecipe);
