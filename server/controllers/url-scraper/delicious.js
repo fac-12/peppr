@@ -1,17 +1,16 @@
 const request = require('request');
 const cheerio = require('cheerio');
 
-
 const delicious = (url, req, res) => {
-
+  //error handling needed
   request(url, (error, response, body) => {
 
     const $ = cheerio.load(body);
     const ingredients = [];
     const method = [];
 
-    $('.ingredient-box .content').each((index, element) => {
-      ingredients[index] = $(element).children().text().trim().split('\n')
+    $('.ingredient-box .content ul li').each((index, element) => {
+      ingredients[index] = $(element).text().trim()
     });
 
     $('ol li').each((index, element) => {
