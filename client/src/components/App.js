@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import Landing from './Landing';
+
 
 class App extends Component {
   render() {
@@ -13,6 +16,11 @@ class App extends Component {
         </BrowserRouter>
     );
   }
+  componentDidMount() {
+    this.props.getUser();
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({auth: state.auth})
+
+export default connect(mapStateToProps, actions)(App);
