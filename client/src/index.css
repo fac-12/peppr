@@ -3,10 +3,29 @@
   margin: 0;
 }
 
+.landing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landingImage {
+  width: 70vw;
+  height: 100vh;
+  background-position: left center;
+  opacity: 70%;
+}
+
+.form {
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+}
+
 .signin {
   font-family: Lato, sans-serif;
   color: #333333;
   border: 1px solid red;
+  width: 35vw;
 }
 
 .heading {
@@ -19,7 +38,7 @@
   font-style: italic;
   font-weight: 200;
   font-size: 11px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .loginInput {
@@ -28,6 +47,7 @@
   outline: none;
   border: 0;
   border-bottom: 0.01em solid rgba(224, 224, 224, 0.95);
+  padding-bottom: 15px;
 }
 
 .loginInput::placeholder {
