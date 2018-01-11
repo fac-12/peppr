@@ -9,8 +9,7 @@ const jamieoliver = (url, req, res) => {
 
     const $ = cheerio.load(body);
 
-    const title = '';
-
+    const title = $('h1.hidden-xs').text();
     const ingredients = [];
     const method = [];
 

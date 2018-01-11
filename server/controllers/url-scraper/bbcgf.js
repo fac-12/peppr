@@ -8,8 +8,10 @@ const bbcgf = (url, req, res) => {
     // NEED TO DO ERROR HANDLING
 
     const $ = cheerio.load(body);
+    const title = $('.recipe-header__title').text();
     const ingredients = [];
     const method = [];
+
 
     $('.ingredients-list__item').each((index, element) => {
         if ($(element).children().first().hasClass('ingredients-list__glossary-link')) {
@@ -27,11 +29,14 @@ const bbcgf = (url, req, res) => {
     })
 
     const imageUrl = `http:${$('.img-container').children().first().attr('src')}`;
+    const tags='';
 
     const scrapedRecipe = {
-      imageUrl,
+      title,
       ingredients,
-      method
+      method,
+      imageUrl,
+      tags
     }
 
     res.status(200).send(scrapedRecipe);

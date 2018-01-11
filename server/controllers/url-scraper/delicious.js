@@ -6,6 +6,7 @@ const delicious = (url, req, res) => {
   request(url, (error, response, body) => {
 
     const $ = cheerio.load(body);
+    const title = $('h1.post-title').text();
     const ingredients = [];
     const method = [];
 
@@ -18,11 +19,14 @@ const delicious = (url, req, res) => {
     })
 
     const imageUrl = `${$('.attachment-recipes-featured').attr('src')}`;
+    const tags ='';
 
     const scrapedRecipe = {
-      imageUrl,
+      title,
       ingredients,
-      method
+      method,
+      imageUrl,
+      tags
     }
 
     res.status(200).send(scrapedRecipe);
