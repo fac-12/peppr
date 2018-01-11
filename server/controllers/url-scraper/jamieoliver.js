@@ -5,6 +5,8 @@ const jamieoliver = (url, req, res) => {
 
   request(url, (error, response, body) => {
 
+    // NEED TO DO ERROR HANDLING
+
     const $ = cheerio.load(body);
     const ingredients = [];
     const method = [];
