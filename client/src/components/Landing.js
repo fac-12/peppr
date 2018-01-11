@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import SignUp from './Signup';
 
 class Landing extends Component {
   render() {
     return (
       <div>
-        Hello world
+        <SignUp />
       </div>
     );
   }

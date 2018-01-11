@@ -15,3 +15,7 @@ export const getUser = () => {
     .catch(err => console.log)
   }
 }
+
+export const signupUser = () => {
+
+}
