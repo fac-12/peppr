@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { signinUser } from '../actions/index';
+import { signinUser } from '../../actions/index';
 
 class SignIn extends Component {
   render() {
-    console.log(this.props.error)
     const { handleSubmit } = this.props;
     return (
       <section className="signin">
