@@ -36,16 +36,32 @@ class SignUp extends Component {
     )
   }
   renderField(field) {
-    return (
+    const { meta: { touched, error}} = field;
+    return ([
       <input {...field.input}
       type={field.type}
       placeholder={field.placeholder}
-      />
-    )
+      key={1}
+      />,
+      <div key={2}>
+        {touched ? error : ''}
+      </div>
+     ])
   }
 }
 
+const validate = values => {
+  const errors = {};
+  if (!values.name) errors.name = 'Enter your name';
+  if (!values.email) errors.email = 'Enter your email';
+  if (!values.password) errors.password = 'Enter your password';
+  if (!values.confirmPassword) errors.confirmPassword = 'Enter your password again';
+  if (values.password  !== values.confirmPassword) errors.confirmPassword = 'Password do not match';
+  return errors;
+}
+
 export default reduxForm ({
+  validate,
   form: 'signup'
 })(
   connect (null, { signupUser })(SignUp)
