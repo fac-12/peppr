@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
+import { addRecipe } from "../../actions/recipes";
 
 class NewRecipeForm extends Component {
 
@@ -14,7 +15,9 @@ class NewRecipeForm extends Component {
   }
 
   onSubmit(values) {
-
+    this.props.addRecipe(values, () => {
+      this.props.history.push("/recipes");
+    });
   }
 
   render() {
@@ -41,6 +44,12 @@ class NewRecipeForm extends Component {
             component={this.renderField}
           />
           <Field
+            label="Image Url"
+            name="imageUrl"
+            textfield={false}
+            component={this.renderField}
+          />
+          <Field
             label="Tags"
             name="tags"
             textfield={false}
@@ -60,10 +69,6 @@ const validate = (values) => {
   return errors;
 }
 
-// const mapStateToProps = (state) => {
-//   return { recipes: state.recipes };
-// }
-
 NewRecipeForm = reduxForm({
   validate,
   enableReinitialize: true,
@@ -71,11 +76,8 @@ NewRecipeForm = reduxForm({
 })(NewRecipeForm);
 
 NewRecipeForm = connect(
-  state => {
-    console.log('state', state.recipes);
-    return ({ initialValues: state.recipes})
-  },
-  {  }
+  state => ({ initialValues: state.recipes}),
+  { addRecipe }
 )(NewRecipeForm)
 
 export default NewRecipeForm;
