@@ -8,6 +8,9 @@ const jamieoliver = (url, req, res) => {
     // NEED TO DO ERROR HANDLING
 
     const $ = cheerio.load(body);
+
+    const title = '';
+
     const ingredients = [];
     const method = [];
 
@@ -19,11 +22,14 @@ const jamieoliver = (url, req, res) => {
     $('.recipeSteps').children().each((index, element) => method[index] = $(element).text().trim());
 
     const imageUrl = `http:${$('picture > source')['0'].attribs.srcset}`;
+    const tags = '';
 
     const scrapedRecipe = {
-      imageUrl,
+      title,
       ingredients,
-      method
+      method,
+      imageUrl,
+      tags
     }
 
     res.status(200).send(scrapedRecipe);
