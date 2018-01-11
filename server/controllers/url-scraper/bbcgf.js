@@ -9,8 +9,8 @@ const bbcgf = (url, req, res) => {
 
     const $ = cheerio.load(body);
     const title = $('.recipe-header__title').text();
-    const ingredients = [];
-    const method = [];
+    let ingredients = '';
+    let method = '';
 
 
     $('.ingredients-list__item').each((index, element) => {
@@ -19,13 +19,13 @@ const bbcgf = (url, req, res) => {
           const middle = $(element).children().html()
           const next = $(element).children().first()['0'].next.type === 'text' ? $(element).children().first()['0'].next.data : '';
 
-          ingredients[index] = prev + middle + next;
+          ingredients += prev + middle + next + '\n';
         }
         else ingredients[index] = $(element).html();
     });
 
     $('.method__item').each((index, element) => {
-      method[index] = $(element).children().first().text();
+      method += $(element).children().first().text() + '\n\n';
     })
 
     const imageUrl = `http:${$('.img-container').children().first().attr('src')}`;

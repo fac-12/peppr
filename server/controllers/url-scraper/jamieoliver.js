@@ -10,15 +10,15 @@ const jamieoliver = (url, req, res) => {
     const $ = cheerio.load(body);
 
     const title = $('h1.hidden-xs').text();
-    const ingredients = [];
-    const method = [];
+    let ingredients = '';
+    let method = '';
 
     $('.ingred-list').children().each((index, element) => {
       const regex = /\S+/gi;
-      ingredients[index] = $(element).text().match(regex).join(' ');
+      ingredients += $(element).text().match(regex).join(' ') + '\n';
     });
 
-    $('.recipeSteps').children().each((index, element) => method[index] = $(element).text().trim());
+    $('.recipeSteps').children().each((index, element) => method += $(element).text().trim() + '\n\n');
 
     const imageUrl = `http:${$('picture > source')['0'].attribs.srcset}`;
     const tags = '';

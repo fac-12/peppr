@@ -7,15 +7,15 @@ const delicious = (url, req, res) => {
 
     const $ = cheerio.load(body);
     const title = $('h1.post-title').text();
-    const ingredients = [];
-    const method = [];
+    let ingredients = '';
+    let method = '';
 
     $('.ingredient-box .content ul li').each((index, element) => {
-      ingredients[index] = $(element).text().trim()
+      ingredients += $(element).text().trim() + '\n'
     });
 
     $('ol li').each((index, element) => {
-      method[index] = $(element).text().trim()
+      method += $(element).text().trim() + '\n\n'
     })
 
     const imageUrl = `${$('.attachment-recipes-featured').attr('src')}`;
