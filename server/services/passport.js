@@ -1,19 +1,8 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const { Strategy, ExtractJwt } = require('passport-jwt');
 const queries = require('../controllers/queries');
 const { comparePassword } = require('./bcrypt');
-
-passport.serializeUser((user, done) => {
-  done(null, user.email);
-});
-
-passport.deserializeUser((email, done) => {
-  queries
-  .getUser(email)
-  .then(user => {
-    done(null, user);
-  })
-});
 
 const localOptions = { usernameField: 'email' };
 
@@ -31,4 +20,23 @@ const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
   .catch(done)
 })
 
+const jwtOptions = {
+  jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+  secretOrKey: process.env.SECRET
+};
+
+const jwtLogin = new Strategy(jwtOptions, (payload, done) => {
+  queries
+  .getUserById(payload.sub)
+  .then(user => {
+    if (user){
+      done(null, user);
+    } else {
+      done(null, false);
+    }
+  })
+  .catch(done)
+})
+
 passport.use(localLogin);
+passport.use(jwtLogin);
