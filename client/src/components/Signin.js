@@ -8,29 +8,38 @@ class SignIn extends Component {
     console.log(this.props.error)
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <Field
-          name='email'
-          type='email'
-          placeholder='Email'
-          component={this.renderField}
-        />
-        <Field
-          name='password'
-          type='password'
-          placeholder='Password'
-          component={this.renderField}
-        />
-        <input type="submit" defaultValue="submit"/>
-      </form>
+      <section className="signin">
+        <h1 className="heading">Login</h1>
+        <p className="tagline">enter tagline</p>
+         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <Field
+            name='email'
+            type='email'
+            placeholder='Email'
+            className='loginInput'
+            component={this.renderField}
+          />
+          <Field
+            name='password'
+            type='password'
+            placeholder='Password'
+            className='loginInput'
+            component={this.renderField}
+          />
+          <input type="submit" defaultValue="Login" className="loginBtn"/>
+        </form>
+        <p className="signupRedirect">New to Peppr? Sign up</p>
+      </section>
+
     )
   }
   renderField(field) {
-    const { meta: { touched, error}} = field;
+    const { className, meta: { touched, error}} = field;
     return ([
       <input {...field.input}
       type={field.type}
       placeholder={field.placeholder}
+      className={className}
       key={1}
       />,
       <div key={2}>

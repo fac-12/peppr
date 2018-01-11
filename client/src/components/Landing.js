@@ -6,8 +6,8 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <SignUp />
-        {/* <SignIn /> */}
+        {/* <SignUp /> */}
+        <SignIn />
       </div>
     );
   }
