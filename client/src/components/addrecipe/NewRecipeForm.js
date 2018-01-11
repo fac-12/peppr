@@ -75,9 +75,7 @@ NewRecipeForm = reduxForm({
   form: "NewRecipeForm",
 })(NewRecipeForm);
 
-NewRecipeForm = connect(
+export default NewRecipeForm = connect(
   state => ({ initialValues: state.recipes}),
   { addRecipe }
-)(NewRecipeForm)
-
-export default NewRecipeForm;
+)(NewRecipeForm);
