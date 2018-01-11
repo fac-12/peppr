@@ -14,7 +14,7 @@ const delicious = (url, req, res) => {
     });
 
     $('ol li').each((index, element) => {
-      method[index] = $(element).text()
+      method[index] = $(element).text().trim()
     })
 
     const imageUrl = `${$('.attachment-recipes-featured').attr('src')}`;
