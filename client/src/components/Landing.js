@@ -7,7 +7,7 @@ class Landing extends Component {
     return (
       <div>
         <SignUp />
-        <SignIn />
+        {/* <SignIn /> */}
       </div>
     );
   }

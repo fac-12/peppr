@@ -5,6 +5,7 @@ import { signinUser } from '../actions/index';
 
 class SignIn extends Component {
   render() {
+    console.log(this.props.error)
     const { handleSubmit } = this.props;
     return (
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
@@ -49,9 +50,11 @@ const validate = values => {
   return errors;
 }
 
+const mapStateToProps = state => ({ error: state.error })
+
 export default reduxForm ({
   validate,
   form: 'signin'
 })(
-  connect (null, { signinUser })(SignIn)
+  connect (mapStateToProps, { signinUser })(SignIn)
 )
