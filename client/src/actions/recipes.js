@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { CHECK_URL, ADD_RECIPE } from './types';
-import { authError } from './index';
+import { authError } from './auth';
 import history from './history';
 
 export const checkUrl = (values) => {
