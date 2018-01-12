@@ -16,6 +16,7 @@ class App extends Component {
         <Router history={history}>
           <div>
             <Route exact path="/" component={Landing} />
+            <Route exact path="/signup" component={Landing} />
             <Route exact path="/recipes"
             render={() => (this.props.auth ? (<Recipes/>) : (<Redirect to="/"/>))}
             />
