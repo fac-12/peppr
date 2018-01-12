@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SignUp from './Signup';
 import SignIn from './Signin';
-import landingImage from '../../katherine-lenhart-440548.jpg'
+import landingImage from '../../assets/images/katherine-lenhart-440548.jpg'
 
 class Landing extends Component {
   render() {

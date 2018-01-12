@@ -68,3 +68,27 @@
 .signin__signupRedirectLink {
   font-size: 12px;
 }
+
+/*------------ NAVBAR ------------*/
+
+.navbar {
+  border: 1px solid blue;
+  /* display: flex;
+  align-items: flex-end; */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  border: 1px solid red;
+  width: 100%;
+}
+
+.navbar__link {
+  text-decoration: none;
+}
