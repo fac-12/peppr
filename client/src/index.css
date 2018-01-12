@@ -1,94 +1,105 @@
 * {
-  padding: 0;
-  margin: 0;
+    font-family: Lato, sans-serif;
+    padding: 0;
+    margin: 0;
 }
+
+
+/***********************************************
+  $ Landing Page 
+***********************************************/
 
 .landing {
-  display: flex;
-  justify-content: space-between;
+    background-image: linear-gradient(rgba(51, 51, 51, .54), rgba(51, 51, 51, .54)), url('./assets/images/katherine-lenhart-440548.jpg');
+    background-size: cover;
+    height: 100vh;
 }
 
-.landing__pepprImage {
-  width: 70vw;
-  height: 100vh;
-  background-position: left center;
-  opacity: 70%;
+.landing__header {
+    padding: 2.5em 0 0.5em;
+    text-align: center;
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 36px;
 }
 
-.signin__container {
-  border: 1px solid gray;
-  display: flex;
-  align-items: center;
+.landing__tagline {
+    text-align: center;
+    font-style: italic;
+    color: white;
 }
 
-.signin__form {
-  font-family: Lato, sans-serif;
-  color: #333333;
-  border: 1px solid red;
-  width: 35vw;
+.landing__form__container {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.signin__heading {
-  font-size: 36px;
-  font-weight: normal;
-  letter-spacing: 2px;
+.landing__input {
+    outline: none;
+    border: 0;
+    background: none;
+    border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
+    width: 205px;
+    padding-bottom: 1em;
+    margin: 2em 0;
+    color: white;
+    font-size: 14px;
 }
 
-.signin__tagline {
-  font-style: italic;
-  font-weight: 200;
-  font-size: 11px;
-  margin-bottom: 50px;
+.landing__input::placeholder {
+    color: white;
+    font-size: 14px;
 }
 
-.signin__input {
-  font-family: Lato, sans-serif;
-  font-size: 16px;
-  outline: none;
-  border: 0;
-  border-bottom: 0.01em solid rgba(224, 224, 224, 0.95);
-  padding-bottom: 15px;
+.landing__input--errortext {
+    color: white;
+    font-size: 10px;
 }
 
-.signin__input::placeholder {
-  color: #333333;
+.landing__form__btn {
+    width: 205px;
+    height: 49px;
+    font-size: 18px;
+    border-radius: 5px;
+    background: rgba(225, 225, 225, 0.15);
+    text-transform: uppercase;
+    border: 0.03em solid rgba(224, 224, 224, 0.3);
+    color: white;
+    margin-top: 1em;
+    letter-spacing: 1px;
 }
 
-.signin__btn {
-  font-family: Lato, sans-serif;
-  font-size: 18px;
-  font-weight: 200;
-  color: white;
-  border: none;
-  text-transform: uppercase;
-  background: #D6472C;
-  padding: 10px 30px;
+.landing__form__togglelink {
+    text-align: center;
+    display: block;
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
 }
 
-.signin__signupRedirectLink {
-  font-size: 12px;
-}
 
 /*------------ NAVBAR ------------*/
 
 .navbar {
-  border: 1px solid blue;
-  /* display: flex;
+    border: 1px solid blue;
+    /* display: flex;
   align-items: flex-end; */
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .navbar ul {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  border: 1px solid red;
-  width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    border: 1px solid red;
+    width: 100%;
 }
 
 .navbar__link {
-  text-decoration: none;
+    text-decoration: none;
 }

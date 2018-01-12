@@ -7,10 +7,9 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        <div className="signin__container">
-          {this.renderForm()}
-        </div>
-        <img src={landingImage} alt="Pepper image" className="landing__pepprImage" />
+        <h1 className="landing__header">PEPPR</h1>
+        <p className="landing__tagline">enter tagline</p>
+        {this.renderForm()}
       </div>
     );
   }
