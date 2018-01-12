@@ -9,13 +9,16 @@ class Navbar extends Component {
     <nav className='navbar'>
       <ul>
         <li>
-          <Link to='/recipes' className='navbar__link'>Recipes</Link>
+          <i className="ion-ios-nutrition-outline navbar__icon"></i>
+          <Link to='/recipes' className='navbar__link'> Recipes</Link>
         </li>
         <li>
-          <Link to='/addrecipe' className='navbar__link'>Add</Link>
+          <i className="ion-ios-plus-outline navbar__icon"></i>
+          <Link to='/addrecipe' className='navbar__link'> Add</Link>
         </li>
         <li>
-          <Link to='/' onClick={this.logout.bind(this)} className='navbar__link'>Log out</Link>
+          <i className="ion-ios-undo-outline navbar__icon"></i>
+          <Link to='/' onClick={this.logout.bind(this)} className='navbar__link'> Log out</Link>
         </li>
       </ul>
     </nav>

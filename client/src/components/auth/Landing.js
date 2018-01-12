@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { resetError } from '../../actions/auth';
+
 import SignUp from './Signup';
 import SignIn from './Signin';
-import landingImage from '../../assets/images/katherine-lenhart-440548.jpg'
 
 class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        <div className="signin__container">
-          {this.renderForm()}
-        </div>
-        <img src={landingImage} alt="Pepper image" className="landing__pepprImage" />
+        <h1 className="landing__header">PEPPR</h1>
+        <p className="landing__tagline">enter tagline</p>
+        {this.renderForm()}
       </div>
     );
   }
@@ -20,7 +21,11 @@ class Landing extends Component {
       this.props.match.path === '/' ? <SignIn /> : <SignUp />
     )
   }
+
+  componentDidMount() {
+    this.props.resetError();
+  }
 }
 
 
-export default Landing;
+export default connect (null, { resetError })(Landing)

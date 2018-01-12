@@ -8,43 +8,41 @@ class SignIn extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <section className="signin__form">
-        <h1 className="signin__heading">Login</h1>
-        <p className="signin__tagline">enter tagline</p>
-         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-          <Field
-            name='email'
-            type='email'
-            placeholder='Email'
-            className='signin__input signin__emailInput'
-            component={this.renderField}
-          />
-          <Field
-            name='password'
-            type='password'
-            placeholder='Password'
-            className='signin__input signin__passwordInput'
-            component={this.renderField}
-          />
-          {this.renderAlert()}
-          <input type="submit" defaultValue="Login" className="signin__btn"/>
-        </form>
-        <Link to='/signup' className="signin__signupRedirectLink">New to Peppr? Sign up</Link>
+      <section>
+        <div className="landing__form__container">
+          <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+            <Field
+              name='email'
+              type='email'
+              placeholder='Email'
+              component={this.renderField}
+            />
+            <Field
+              name='password'
+              type='password'
+              placeholder='Password'
+              component={this.renderField}
+            />
+            {this.renderAlert()}
+            <input type="submit" defaultValue="Login" className="landing__form__btn"/>
+          </form>
+        </div>
+        <Link to='/signup' className="landing__form__togglelink">New to Peppr? Sign up</Link>
       </section>
 
     )
   }
 
   renderField(field) {
-    const { className, meta: { touched, error}} = field;
+    const { meta: { touched, error } } = field;
     return ([
       <input {...field.input}
       type={field.type}
       placeholder={field.placeholder}
-      className={className}
+      className="landing__input"
       key={1}
       />,
-      <div key={2}>
+      <div key={2} className="landing__input--errortext">
         {touched ? error : ''}
       </div>
      ])
@@ -57,7 +55,7 @@ class SignIn extends Component {
   renderAlert(){
     if (this.props.error){
       return (
-          <p>
+          <p className="landing__input--errortext">
             <strong>Oops!</strong> {this.props.error}
           </p>
       );
