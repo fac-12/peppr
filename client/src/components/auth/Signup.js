@@ -1,40 +1,44 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { signupUser } from '../../actions/index';
+import { Link } from 'react-router-dom';
+import { signupUser } from '../../actions/auth';
 
 class SignUp extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <Field
-          name='name'
-          type='text'
-          placeholder='Name'
-          component={this.renderField}
-        />
-        <Field
-          name='email'
-          type='email'
-          placeholder='Email'
-          component={this.renderField}
-        />
-        <Field
-          name='password'
-          type='password'
-          placeholder='Password'
-          component={this.renderField}
-        />
-        <Field
-          name='confirmPassword'
-          type='password'
-          placeholder='Confirm password'
-          component={this.renderField}
-        />
-        {this.renderAlert()}  
-        <input type="submit" defaultValue="submit"/>
-      </form>
+      <section>
+        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <Field
+            name='name'
+            type='text'
+            placeholder='Name'
+            component={this.renderField}
+          />
+          <Field
+            name='email'
+            type='email'
+            placeholder='Email'
+            component={this.renderField}
+          />
+          <Field
+            name='password'
+            type='password'
+            placeholder='Password'
+            component={this.renderField}
+          />
+          <Field
+            name='confirmPassword'
+            type='password'
+            placeholder='Confirm password'
+            component={this.renderField}
+          />
+          {this.renderAlert()}  
+          <input type="submit" defaultValue="submit"/>
+        </form>
+        <Link to='/'>Already a member? Login</Link>
+      </section>
     )
   }
 
