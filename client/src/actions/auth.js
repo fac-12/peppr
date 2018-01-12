@@ -1,6 +1,6 @@
 import axios from 'axios';
 import history from './history';
-import { AUTH_USER, UNAUTH_USER, AUTH_ERROR } from './types'
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, RESET_ERROR } from './types'
 
 export const getUser = () => {
   return(dispatch) => {
@@ -56,6 +56,12 @@ export const authError = (error) => {
   return {
     type: AUTH_ERROR,
     payload: error
+  };
+}
+
+export const resetError = () => {
+  return {
+    type: RESET_ERROR
   };
 }
 
