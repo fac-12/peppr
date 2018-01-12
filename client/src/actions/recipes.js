@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { CHECK_URL, ADD_RECIPE } from './types';
-import { authError } from './index';
+import { CHECK_URL, ADD_RECIPE, GET_RECIPES } from './types';
+import { authError } from './auth';
 import history from './history';
 
 export const checkUrl = (values) => {
@@ -20,7 +20,7 @@ export const checkUrl = (values) => {
 
 export const addRecipe = (values) => {
   return(dispatch) => {
-    axios.post('/addnewrecipe', values, {  headers: {authorization: localStorage.getItem('token')}})
+    axios.post('/addnewrecipe', values, {headers: {authorization: localStorage.getItem('token')}})
     .then(response => {
       dispatch({
         type: ADD_RECIPE,
@@ -30,6 +30,21 @@ export const addRecipe = (values) => {
     })
     .catch(error => {
       history.push('/addrecipe');
+    })
+  }
+}
+
+export const getRecipes = () => {
+  return (dispatch) => {
+    axios.get('/getrecipes', {headers: {authorization: localStorage.getItem('token')}})
+    .then(response => {
+      dispatch({
+        type: GET_RECIPES,
+        payload: response.data
+      })
+    })
+    .catch(error => {
+      
     })
   }
 }

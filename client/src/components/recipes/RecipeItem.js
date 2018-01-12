@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Recipes extends Component {
+class RecipeItem extends Component {
   render() {
     return (
       <div>
-        Recipess
+        <p>Recipe</p>
       </div>
     );
   }
 }
 
-export default Recipes;
+export default RecipeItem;

@@ -1,17 +1,9 @@
-import { CHECK_URL } from '../actions/types';
+import { GET_RECIPES } from '../actions/types';
 
-const emptyRecipe = {
-  title: '',
-  ingredients: '',
-  method: '',
-  imageUrl: '',
-  tags: ''
-};
-
-export default (state = emptyRecipe, action) => {
+export default (state = null, action) => {
 
   switch (action.type) {
-    case CHECK_URL:
+    case GET_RECIPES:
       return action.payload;
     default:
       return state;

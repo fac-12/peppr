@@ -1,7 +1,7 @@
 const queries = require( './queries');
 
 
-exports.addRecipe = (req,res) => {
+exports.addRecipe = (req, res) => {
   const { title, ingredients, method, imageUrl, tags } = req.body;
   const { id } = req.user;
 
@@ -17,5 +17,18 @@ exports.addRecipe = (req,res) => {
   })
   .catch((err) => {
     res.status(500).send();
+  });
+}
+
+exports.getRecipes = (req, res) => {
+  const { id } = req.user;
+
+  queries
+  .getRecipes(id)
+  .then((recipes) => {
+    console.log(recipes);
   })
+  .catch((err) => {
+    res.status(500).send();
+  });
 }

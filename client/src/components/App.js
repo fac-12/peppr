@@ -6,7 +6,7 @@ import { getUser } from '../actions/auth'
 import history from '../actions/history';
 import Landing from './auth/Landing';
 import AddRecipe from './addrecipe/AddRecipe';
-import Recipes from './Recipes';
+import Recipes from './recipes/Recipes';
 
 
 class App extends Component {
