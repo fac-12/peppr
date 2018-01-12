@@ -8,12 +8,19 @@ class Landing extends Component {
     return (
       <div className="landing">
         <div className="signin__container">
-          <SignIn />
+          {this.renderForm()}
         </div>
         <img src={landingImage} alt="Pepper image" className="landing__pepprImage" />
       </div>
     );
   }
+
+  renderForm(){
+    return (
+      this.props.match.path === '/' ? <SignIn /> : <SignUp />
+    )
+  }
 }
+
 
 export default Landing;

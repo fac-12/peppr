@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { signinUser } from '../../actions/index';
+import { Link } from 'react-router-dom';
+import { signinUser } from '../../actions/auth';
 
 class SignIn extends Component {
   render() {
@@ -28,7 +29,7 @@ class SignIn extends Component {
           {this.renderAlert()}
           <input type="submit" defaultValue="Login" className="signin__btn"/>
         </form>
-        <p className="signin__signupRedirectLink">New to Peppr? Sign up</p>
+        <Link to='/signup' className="signin__signupRedirectLink">New to Peppr? Sign up</Link>
       </section>
 
     )
