@@ -5,7 +5,7 @@ const bbcgf = (url, req, res) => {
 
   request(url, (error, response, body) => {
 
-    // NEED TO DO ERROR HANDLING
+    if(error) return res.status(500).send();
 
     const $ = cheerio.load(body);
     const title = $('.recipe-header__title').text();
@@ -30,6 +30,8 @@ const bbcgf = (url, req, res) => {
 
     const imageUrl = `http:${$('.img-container').children().first().attr('src')}`;
     const tags='';
+
+    if(!title || !ingredients || !method || !imageUrl) return res.status(500).send();
 
     const scrapedRecipe = {
       title,

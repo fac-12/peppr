@@ -1,4 +1,5 @@
 import axios from 'axios';
+import history from './history';
 import { AUTH_USER, UNAUTH_USER, AUTH_ERROR } from './types'
 
 export const getUser = () => {
@@ -27,6 +28,7 @@ export const signupUser = values => {
         type: AUTH_USER
       })
       localStorage.setItem('token', response.data.token)
+      history.push('/recipes')
     })
     .catch(error => {
       dispatch(authError(error.response.data.error));
@@ -42,9 +44,10 @@ export const signinUser = values => {
         type: AUTH_USER
       })
       localStorage.setItem('token', response.data.token)
+      history.push('/recipes')
     })
     .catch(error => {
-      dispatch(authError('Username or password was incorrect'));
+      dispatch(authError('Email or password was incorrect'));
     })
   }
 }

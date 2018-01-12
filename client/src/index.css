@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.landing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landingImage {
+  width: 70vw;
+  height: 100vh;
+  background-position: left center;
+  opacity: 70%;
+}
+
+.form {
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+}
+
+.signin {
+  font-family: Lato, sans-serif;
+  color: #333333;
+  border: 1px solid red;
+  width: 35vw;
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  font-style: italic;
+  font-weight: 200;
+  font-size: 11px;
+  margin-bottom: 50px;
+}
+
+.loginInput {
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  outline: none;
+  border: 0;
+  border-bottom: 0.01em solid rgba(224, 224, 224, 0.95);
+  padding-bottom: 15px;
+}
+
+.loginInput::placeholder {
+  color: #333333;
+}
+
+.loginBtn {
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  background: #D6472C;
+  padding: 10px 30px;
+}
+
+.signupRedirect {
+  font-size: 12px;
+}

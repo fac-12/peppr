@@ -24,6 +24,16 @@ class UrlForm extends Component {
     this.props.checkUrl(values);
   }
 
+  renderAlert(){
+    if (this.props.error){
+      return (
+          <p>
+            <strong>Oops!</strong> {this.props.error}
+          </p>
+      );
+    }
+  }
+
   render() {
 
     const { handleSubmit } = this.props;
@@ -36,6 +46,7 @@ class UrlForm extends Component {
             component={this.renderField}
           />
           <input type="submit" />
+          {this.renderAlert()}
         </form>
     );
   }
@@ -53,7 +64,10 @@ const validate = (values) => {
 }
 
 const mapStateToProps = (state) => {
-  return { recipes: state.recipes };
+  return {
+    recipes: state.recipes,
+    error: state.error 
+  };
 }
 
 export default reduxForm({
