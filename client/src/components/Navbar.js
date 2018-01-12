@@ -6,16 +6,16 @@ import { connect } from 'react-redux';
 class Navbar extends Component {
   render() {
     return (
-    <nav>
+    <nav className='navbar'>
       <ul>
         <li>
-          <Link to='/recipes'>Recipes</Link>
+          <Link to='/recipes' className='navbar__link'>Recipes</Link>
         </li>
         <li>
-          <Link to='/addrecipe'>Add</Link>
+          <Link to='/addrecipe' className='navbar__link'>Add</Link>
         </li>
         <li>
-          <Link to='/' onClick={this.logout.bind(this)}>Log out</Link>
+          <Link to='/' onClick={this.logout.bind(this)} className='navbar__link'>Log out</Link>
         </li>
       </ul>
     </nav>
