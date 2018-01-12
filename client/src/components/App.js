@@ -15,11 +15,11 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Route exact path="/" component={Landing} />
-            <Route exact path="/recipes" 
-            render={() => (this.props.auth ? (<Recipes/>) : (<Redirect to="/"/>))}
+            <Route exact path="/recipes"
+            render={(props) => (this.props.auth ? (<Recipes {...props}/>) : (<Redirect to="/"/>))}
             />
-            <Route exact path="/addrecipe" 
-            render={() => (this.props.auth ? (<AddRecipe/>) : (<Redirect to="/"/>))}
+            <Route exact path="/addrecipe"
+            render={(props) => (this.props.auth ? (<AddRecipe {...props}/>) : (<Redirect to="/"/>))}
             />
           </div>
         </BrowserRouter>

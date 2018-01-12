@@ -3,19 +3,18 @@ import React, { Component } from 'react';
 import UrlForm from './UrlForm';
 import NewRecipeForm from './NewRecipeForm';
 
-class AddRecipe extends Component {
+const AddRecipe = (props) => {
 
-  render() {
+  console.log('history', props.history);
 
-    return (
-      <div>
-        <h1>Add Recipe</h1>
-        <UrlForm />
-        <p>or enter your recipe details manually</p>
-        <NewRecipeForm />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>Add Recipe</h1>
+      <UrlForm />
+      <p>or enter your recipe details manually</p>
+      <NewRecipeForm history={props.history} />
+    </div>
+  );
 }
 
 
