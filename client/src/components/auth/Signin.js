@@ -7,28 +7,28 @@ class SignIn extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <section className="signin">
-        <h1 className="heading">Login</h1>
-        <p className="tagline">enter tagline</p>
+      <section className="signin__form">
+        <h1 className="signin__heading">Login</h1>
+        <p className="signin__tagline">enter tagline</p>
          <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <Field
             name='email'
             type='email'
             placeholder='Email'
-            className='loginInput'
+            className='signin__input signin__emailInput'
             component={this.renderField}
           />
           <Field
             name='password'
             type='password'
             placeholder='Password'
-            className='loginInput'
+            className='signin__input signin__passwordInput'
             component={this.renderField}
           />
-          {this.renderAlert()}  
-          <input type="submit" defaultValue="Login" className="loginBtn"/>
+          {this.renderAlert()}
+          <input type="submit" defaultValue="Login" className="signin__btn"/>
         </form>
-        <p className="signupRedirect">New to Peppr? Sign up</p>
+        <p className="signin__signupRedirectLink">New to Peppr? Sign up</p>
       </section>
 
     )
@@ -60,7 +60,7 @@ class SignIn extends Component {
             <strong>Oops!</strong> {this.props.error}
           </p>
       );
-    } 
+    }
   }
 }
 
