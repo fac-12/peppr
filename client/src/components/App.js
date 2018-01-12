@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import { getUser } from '../actions/auth'
 
 import history from '../actions/history';
 import Landing from './auth/Landing';
@@ -34,4 +34,4 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({auth: state.auth})
 
-export default connect(mapStateToProps, actions)(App);
+export default connect(mapStateToProps, { getUser })(App);

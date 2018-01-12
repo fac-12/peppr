@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { signupUser } from '../../actions/index';
+import { signupUser } from '../../actions/auth';
 
 class SignUp extends Component {
   render() {
