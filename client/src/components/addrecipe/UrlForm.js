@@ -6,10 +6,16 @@ import { checkUrl } from "../../actions/recipes";
 class UrlForm extends Component {
 
   renderField(field) {
+
+    const { meta: { touched, error } } = field;
+
     return (
       <div>
         <label>{field.label}</label>
-        <input type="text" {...field.input} />
+        <input type="url" {...field.input} />
+        <div>
+          {touched ? error : ""}
+        </div>
       </div>
     )
   }
@@ -19,7 +25,7 @@ class UrlForm extends Component {
   }
 
   render() {
-    console.log('recipes', this.props.recipes);
+
     const { handleSubmit } = this.props;
 
     return (
@@ -46,7 +52,7 @@ const validate = (values) => {
   return errors;
 }
 
-const mapStateToProps = (state) => {  
+const mapStateToProps = (state) => {
   return { recipes: state.recipes };
 }
 

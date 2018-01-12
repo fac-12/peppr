@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import UrlForm from './UrlForm';
 import NewRecipeForm from './NewRecipeForm';
 
-const AddRecipe = (props) => {
-
-  console.log('history', props.history);
+const AddRecipe = (props) => {  
 
   return (
     <div>

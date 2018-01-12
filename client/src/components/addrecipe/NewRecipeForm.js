@@ -6,10 +6,16 @@ import { addRecipe } from "../../actions/recipes";
 class NewRecipeForm extends Component {
 
   renderField(field) {
+
+    const { meta: { touched, error } } = field;
+
     return (
       <div>
         <label>{field.label}</label>
         {field.textfield ? <textarea rows="10" cols="50" {...field.input} /> : <input type="text" {...field.input} />}
+        <div>
+          {touched ? error : ""}
+        </div>
       </div>
     )
   }
@@ -44,13 +50,13 @@ class NewRecipeForm extends Component {
             component={this.renderField}
           />
           <Field
-            label="Image Url"
+            label="Image Url (optional)"
             name="imageUrl"
             textfield={false}
             component={this.renderField}
           />
           <Field
-            label="Tags"
+            label="Tags (optional)"
             name="tags"
             textfield={false}
             component={this.renderField}
@@ -65,6 +71,15 @@ const validate = (values) => {
 
   const errors = {};
 
+  if (!values.title) {
+    errors.title = "Enter a title";
+  }
+  if (!values.ingredients) {
+    errors.ingredients = "Enter your ingredients";
+  }
+  if (!values.method) {
+    errors.method = "Enter your method steps";
+  }
 
   return errors;
 }
