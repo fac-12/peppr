@@ -9,8 +9,7 @@ app.set('port', process.env.PORT || 3001);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-
-if (process.env.NODE_ENV === 'producution') {
+if (process.env.NODE_ENV === 'production') {  
   app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
 }
 
