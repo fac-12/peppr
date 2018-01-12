@@ -4,7 +4,6 @@ import { resetError } from '../../actions/auth';
 
 import SignUp from './Signup';
 import SignIn from './Signin';
-import landingImage from '../../assets/images/katherine-lenhart-440548.jpg'
 
 class Landing extends Component {
   render() {
