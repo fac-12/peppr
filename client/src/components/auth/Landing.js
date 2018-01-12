@@ -7,11 +7,10 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        <SignUp />
-        <div className="form">
-          {/* <SignIn /> */}
+        <div className="signin__container">
+          <SignIn />
         </div>
-        <img src={landingImage} alt="Pepper image" className="landingImage" />
+        <img src={landingImage} alt="Pepper image" className="landing__pepprImage" />
       </div>
     );
   }
