@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { CHECK_URL, ADD_RECIPE } from './types'
+import { CHECK_URL, ADD_RECIPE } from './types';
+import { authError } from './index';
+import history from './history';
 
 export const checkUrl = (values) => {
   return(dispatch) => {
@@ -10,20 +12,24 @@ export const checkUrl = (values) => {
         payload: response.data
       })
     })
-    .catch(err => console.log(err))
+    .catch(error => {
+      dispatch(authError('Sorry, we can\'t find the recipe details from this url.\nPlease try one of our partner recipe sites'));
+    })
   }
 }
 
-export const addRecipe = (values, callback) => {
+export const addRecipe = (values) => {
   return(dispatch) => {
-    axios.post('/addnewrecipe', values)
+    axios.post('/addnewrecipe', values, {  headers: {authorization: localStorage.getItem('token')}})
     .then(response => {
       dispatch({
         type: ADD_RECIPE,
         payload: response.data
       })
-      callback();
+      history.push('/recipes');
     })
-    .catch(err => console.log(err))
+    .catch(error => {
+      history.push('/addrecipe');
+    })
   }
 }

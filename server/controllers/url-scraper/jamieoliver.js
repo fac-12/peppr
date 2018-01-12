@@ -5,7 +5,7 @@ const jamieoliver = (url, req, res) => {
 
   request(url, (error, response, body) => {
 
-    // NEED TO DO ERROR HANDLING
+    if(error) return res.status(500).send();
 
     const $ = cheerio.load(body);
 
@@ -22,6 +22,8 @@ const jamieoliver = (url, req, res) => {
 
     const imageUrl = `http:${$('picture > source')['0'].attribs.srcset}`;
     const tags = '';
+
+    if(!title || !ingredients || !method || !imageUrl) return res.status(500).send();
 
     const scrapedRecipe = {
       title,

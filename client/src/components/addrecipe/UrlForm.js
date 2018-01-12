@@ -6,10 +6,16 @@ import { checkUrl } from "../../actions/recipes";
 class UrlForm extends Component {
 
   renderField(field) {
+
+    const { meta: { touched, error } } = field;
+
     return (
       <div>
         <label>{field.label}</label>
-        <input type="text" {...field.input} />
+        <input type="url" {...field.input} />
+        <div>
+          {touched ? error : ""}
+        </div>
       </div>
     )
   }
@@ -18,8 +24,18 @@ class UrlForm extends Component {
     this.props.checkUrl(values);
   }
 
+  renderAlert(){
+    if (this.props.error){
+      return (
+          <p>
+            <strong>Oops!</strong> {this.props.error}
+          </p>
+      );
+    }
+  }
+
   render() {
-    console.log('recipes', this.props.recipes);
+
     const { handleSubmit } = this.props;
 
     return (
@@ -30,6 +46,7 @@ class UrlForm extends Component {
             component={this.renderField}
           />
           <input type="submit" />
+          {this.renderAlert()}
         </form>
     );
   }
@@ -46,8 +63,11 @@ const validate = (values) => {
   return errors;
 }
 
-const mapStateToProps = (state) => {  
-  return { recipes: state.recipes };
+const mapStateToProps = (state) => {
+  return {
+    recipes: state.recipes,
+    error: state.error 
+  };
 }
 
 export default reduxForm({
