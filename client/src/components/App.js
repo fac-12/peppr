@@ -21,9 +21,9 @@ class App extends Component {
             <Route exact path="/recipes"
             render={() => (this.props.auth ? (<Recipes/>) : (<Redirect to="/"/>))}
             />
-            <Route path="/recipes/:id" component={SingleRecipe} />
+            <Route exact path="/recipes/:id" render={() => (this.props.auth ? (<SingleRecipe/>) : (<Redirect to="/"/>))} />
             <Route exact path="/addrecipe"
-            render={(props) => (this.props.auth ? (<AddRecipe/>) : (<Redirect to="/"/>))}
+            render={() => (this.props.auth ? (<AddRecipe/>) : (<Redirect to="/"/>))}
             />
           </div>
         </Router>
