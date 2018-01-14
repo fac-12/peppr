@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class RecipeItem extends Component {
+class NoRecipes extends Component {
   render() {
     return (
       <div>
-        <p>Recipe</p>
+        <p>No recipes saved yet!</p>
       </div>
     );
   }
 }
 
-export default RecipeItem;
+export default NoRecipes;

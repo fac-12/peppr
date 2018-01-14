@@ -1,16 +1,35 @@
 import React, { Component } from 'react';
-import RecipeItem from './RecipeItem';
+import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+import _ from 'lodash';
 
 class RecipeList extends Component {
+
+  renderPosts() {
+    return _.map(this.props.recipes, recipe => {
+      return (
+        <div key={recipe.id}>
+          <Link to={`/recipes/${recipe.id}`}>
+            <img src={recipe.imageurl} />
+          </Link>
+          <p>{recipe.title}</p>
+        </div>
+      );
+    });
+  }
+
   render() {
     return (
       <div>
         <h1>My Recipes</h1>
-        <RecipeItem />
-        
+        {this.renderPosts()}
       </div>
     );
   }
 }
 
-export default RecipeList;
+const mapStateToProps = ({ recipes }) => {
+  return { recipes };
+}
+
+export default connect(mapStateToProps)(RecipeList);

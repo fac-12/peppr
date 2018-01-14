@@ -1,27 +1,34 @@
 import React, { Component } from 'react';
 import RecipeList from './RecipeList';
+import Navbar from '../Navbar';
+import NoRecipes from './NoRecipes';
 import { connect } from "react-redux";
 import { getRecipes } from '../../actions/recipes';
-
+import _ from 'lodash';
 
 class Recipes extends Component {
 
-  componentDidMount() {
+  componentDidMount() {    
     this.props.getRecipes();
-    console.log('recipes', this.props.recipes);
   }
 
   render() {
+
+    const { recipes } = this.props;
+
+    if(!recipes) return <Navbar />
+
     return (
       <div>
-        <RecipeList />
+        <Navbar />
+        { _.isEmpty(recipes) ? <NoRecipes/> : <RecipeList /> }
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return { recipes: state.recipes };
+const mapStateToProps = ({ recipes }) => {
+  return { recipes };
 }
 
 export default connect(mapStateToProps, { getRecipes })(Recipes);

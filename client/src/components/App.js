@@ -7,6 +7,7 @@ import history from '../actions/history';
 import Landing from './auth/Landing';
 import AddRecipe from './addrecipe/AddRecipe';
 import Recipes from './recipes/Recipes';
+import SingleRecipe from './recipes/SingleRecipe';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route exact path="/recipes"
             render={() => (this.props.auth ? (<Recipes/>) : (<Redirect to="/"/>))}
             />
+            <Route path="/recipes/:id" component={SingleRecipe} />
             <Route exact path="/addrecipe"
             render={(props) => (this.props.auth ? (<AddRecipe/>) : (<Redirect to="/"/>))}
             />

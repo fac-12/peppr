@@ -26,7 +26,33 @@ exports.getRecipes = (req, res) => {
   queries
   .getRecipes(id)
   .then((recipes) => {
-    console.log(recipes);
+    res.status(200).send(recipes);
+  })
+  .catch((err) => {
+    res.status(500).send();
+  });
+}
+
+exports.getSingleRecipe = (req, res) => {
+  const { id } = req.params;
+
+  queries
+  .getSingleRecipe(id)
+  .then((recipe) => {
+    res.status(200).send(recipe);
+  })
+  .catch((err) => {
+    res.status(500).send();
+  });
+}
+
+exports.deleteRecipe = (req, res) => {
+  const { id } = req.params;
+
+  queries
+  .deleteRecipe(id)
+  .then(() => {
+    res.status(200).send();
   })
   .catch((err) => {
     res.status(500).send();

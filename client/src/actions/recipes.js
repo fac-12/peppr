@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CHECK_URL, ADD_RECIPE, GET_RECIPES } from './types';
+import { CHECK_URL, ADD_RECIPE, GET_RECIPES, GET_SINGLE_RECIPE, DELETE_RECIPE } from './types';
 import { authError } from './auth';
 import history from './history';
 
@@ -44,7 +44,39 @@ export const getRecipes = () => {
       })
     })
     .catch(error => {
-      
+
+    })
+  }
+}
+
+export const getSingleRecipe = (id) => {
+  return (dispatch) => {
+    axios.get(`/getsinglerecipe/${id}`, {
+      headers: {authorization: localStorage.getItem('token')}
+    })
+    .then(response => {
+      dispatch({
+        type: GET_SINGLE_RECIPE,
+        payload: response.data
+      })
+    })
+    .catch(error => {
+
+    })
+  }
+}
+
+export const deleteRecipe = (id) => {
+  return (dispatch) => {
+    axios.get(`/deleterecipe/${id}`, {
+      headers: {authorization: localStorage.getItem('token')}
+    })
+    .then(response => {
+      dispatch({
+        type: DELETE_RECIPE,
+        payload: id
+      });
+      history.push('/recipes');
     })
   }
 }

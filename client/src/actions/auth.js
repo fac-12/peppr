@@ -58,3 +58,10 @@ export const authError = (error) => {
     payload: error
   };
 }
+
+export const logoutUser = () => {
+  localStorage.removeItem('token')
+  return {
+    type: UNAUTH_USER
+  }
+}

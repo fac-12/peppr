@@ -16,16 +16,28 @@ const addUser = (name, email, password) => {
 }
 
 const addRecipe = (userId, title, ingredients, method, imageUrl, tags) => {
-  return db.query(`INSERT INTO recipes (userId, title, imgUrl, ingredients, method, tags) VALUES ($1, $2, $3, $4, $5, $6)`, [userId, title, imageUrl, ingredients, method, tags])
+  return db.query(`INSERT INTO recipes (userId, title, imageurl, ingredients, method, tags) VALUES ($1, $2, $3, $4, $5, $6)`, [userId, title, imageUrl, ingredients, method, tags])
 }
 
 const getRecipes = (userId) => {
-  return db.query('SELECT * FROM recipes WHERE userId = $1', [id])
+  return db.query('SELECT * FROM recipes WHERE userId = $1', [userId]);
+}
+
+const getSingleRecipe = (recipeId) => {
+  return db.query('SELECT * FROM recipes WHERE id = $1', [recipeId])
+  .then(recipe => recipe[0]);
+}
+
+const deleteRecipe = (recipeId) => {
+  return db.query('DELETE FROM recipes WHERE id = $1', [recipeId]);
 }
 
 module.exports = {
   getUser,
   addUser,
   getUserById,
-  addRecipe
+  addRecipe,
+  getRecipes,
+  getSingleRecipe,
+  deleteRecipe
 }
