@@ -6,7 +6,8 @@ import { getUser } from '../actions/auth'
 import history from '../actions/history';
 import Landing from './auth/Landing';
 import AddRecipe from './addrecipe/AddRecipe';
-import Recipes from './Recipes';
+import Recipes from './recipes/Recipes';
+import SingleRecipe from './recipes/SingleRecipe';
 
 
 class App extends Component {
@@ -20,8 +21,9 @@ class App extends Component {
             <Route exact path="/recipes"
             render={() => (this.props.auth ? (<Recipes/>) : (<Redirect to="/"/>))}
             />
+            <Route exact path="/recipes/:id" render={() => (this.props.auth ? (<SingleRecipe/>) : (<Redirect to="/"/>))} />
             <Route exact path="/addrecipe"
-            render={(props) => (this.props.auth ? (<AddRecipe/>) : (<Redirect to="/"/>))}
+            render={() => (this.props.auth ? (<AddRecipe/>) : (<Redirect to="/"/>))}
             />
           </div>
         </Router>

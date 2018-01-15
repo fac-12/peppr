@@ -65,8 +65,8 @@ const validate = (values) => {
 
 const mapStateToProps = (state) => {
   return {
-    recipes: state.recipes,
-    error: state.error 
+    newRecipe: state.newRecipe,
+    error: state.error
   };
 }
 

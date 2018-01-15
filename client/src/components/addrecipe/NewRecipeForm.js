@@ -69,15 +69,15 @@ const validate = (values) => {
 
   const errors = {};
 
-  // if (!values.title) {
-  //   errors.title = "Enter a title";
-  // }
-  // if (!values.ingredients) {
-  //   errors.ingredients = "Enter your ingredients";
-  // }
-  // if (!values.method) {
-  //   errors.method = "Enter your method steps";
-  // }
+  if (!values.title) {
+    errors.title = "Enter a title";
+  }
+  if (!values.ingredients) {
+    errors.ingredients = "Enter your ingredients";
+  }
+  if (!values.method) {
+    errors.method = "Enter your method steps";
+  }
 
   return errors;
 }
@@ -89,6 +89,6 @@ NewRecipeForm = reduxForm({
 })(NewRecipeForm);
 
 export default NewRecipeForm = connect(
-  state => ({ initialValues: state.recipes}),
+  state => ({ initialValues: state.newRecipe}),
   { addRecipe }
 )(NewRecipeForm);

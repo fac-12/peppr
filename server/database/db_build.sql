@@ -16,7 +16,7 @@ CREATE TABLE recipes (
     id SERIAL PRIMARY KEY,
     userId INTEGER REFERENCES users(id) NOT NULL,
     title VARCHAR(100) NOT NULL,
-    imgUrl VARCHAR(200),
+    imageurl VARCHAR(200),
     ingredients TEXT,
     method TEXT,
     tags VARCHAR(100),

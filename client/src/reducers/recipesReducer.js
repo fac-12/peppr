@@ -1,18 +1,15 @@
-import { CHECK_URL } from '../actions/types';
+import { GET_RECIPES, GET_SINGLE_RECIPE, DELETE_RECIPE } from '../actions/types';
+import _ from "lodash";
 
-const emptyRecipe = {
-  title: '',
-  ingredients: '',
-  method: '',
-  imageUrl: '',
-  tags: ''
-};
-
-export default (state = emptyRecipe, action) => {
+export default (state = null, action) => {
 
   switch (action.type) {
-    case CHECK_URL:
-      return action.payload;
+    case GET_RECIPES:
+      return _.mapKeys(action.payload, "id");
+    case GET_SINGLE_RECIPE:
+      return state ? { ...state, [action.payload.id]: action.payload } : { [action.payload.id]: action.payload };
+    case DELETE_RECIPE:
+      return _.omit(state, action.payload);
     default:
       return state;
   }
