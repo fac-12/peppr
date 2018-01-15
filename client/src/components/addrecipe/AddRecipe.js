@@ -9,7 +9,7 @@ const AddRecipe = (props) => {
 
   return (
     <div>
-      <Banner />
+      <Banner title={"Add a recipe"}/>
       <h1>Add Recipe</h1>
       <UrlForm />
       <p>or enter your recipe details manually</p>

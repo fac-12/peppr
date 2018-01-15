@@ -6,7 +6,7 @@ class Banner extends Component {
     return(
     <div>
       <button onClick={history.goBack}><i className="ion-ios-arrow-left"></i></button>
-      Hello world
+      {this.props.title}
     </div>  
   )}
 }

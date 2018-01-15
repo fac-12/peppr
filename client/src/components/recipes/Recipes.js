@@ -23,7 +23,7 @@ class Recipes extends Component {
     return (
       
       <div>
-        <Banner />
+        <Banner title={"My recipes"}/>
         { _.isEmpty(recipes) ? <NoRecipes/> : <RecipeList /> }
         <Navbar />
       </div>
