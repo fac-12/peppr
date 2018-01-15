@@ -17,14 +17,12 @@ class RecipeList extends Component {
   renderPosts() {
     return _.map(this.props.recipes, recipe => {
       return (
-        <div key={recipe.id}>
-          <div className='recipeList__container'>
-            <Link to={`/recipes/${recipe.id}`} className='recipeList__link'>
-              <img src={recipe.imageurl} alt={recipe.title} className='recipeList__img'/>
-            </Link>
-            <p className='recipeList__recipeTitle'>{recipe.title}</p>
+        <Link to={`/recipes/${recipe.id}`} className='recipeList__link recipelist--overlay'>
+          <div className='recipeList__container' style={{backgroundImage: `url(${recipe.imageurl})`}} key={recipe.id}>
+              {/* <img src={recipe.imageurl} alt={recipe.title} className='recipeList__img'/> */}
+            <h2 className='recipeList__recipeTitle'>{recipe.title}</h2>
           </div>
-        </div>
+        </Link>
       );
     });
   }
