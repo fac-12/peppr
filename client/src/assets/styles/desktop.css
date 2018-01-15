@@ -1,0 +1,35 @@
+@media (min-width:961px) {
+    /***********************************************
+    $ Landing Page 
+    ***********************************************/
+    .landing__image {
+        height: 100%;
+        min-width: 60%;
+        width: auto;
+        z-index: -1;
+        top: 0;
+        left: 40%;
+        position: fixed;
+    }
+    .landing__container {
+        width: 40vw;
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+    .landing__header,
+    .landing__tagline,
+    .landing__input::placeholder,
+    .landing__input--errortext,
+    .landing__form__togglelink {
+        color: black;
+    }
+    .landing__input {
+        border-bottom: 0.03em solid rgba(0, 0, 0, 0.99);
+        color: black;
+    }
+    .landing__form__btn {
+        background-color: #D6472C;
+        color: white;
+    }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { resetError } from '../../actions/auth';
+import image from '../../assets/images/peppers.jpg';
 
 import SignUp from './Signup';
 import SignIn from './Signin';
@@ -8,10 +9,13 @@ import SignIn from './Signin';
 class Landing extends Component {
   render() {
     return (
-      <div className="landing">
-        <h1 className="landing__header">PEPPR</h1>
-        <p className="landing__tagline">All your recipes, in one place</p>
-        {this.renderForm()}
+      <div>
+        <img className="landing__image" src={image}/>
+        <div className="landing__container">
+          <h1 className="landing__header">PEPPR</h1>
+          <p className="landing__tagline">All your recipes in one place</p>
+          {this.renderForm()}
+        </div>
       </div>
     );
   }
