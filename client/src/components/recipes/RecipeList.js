@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
+import Navbar from '../Navbar';
 
 class RecipeList extends Component {
 
@@ -21,8 +22,10 @@ class RecipeList extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <h1>My Recipes</h1>
         {this.renderPosts()}
+
       </div>
     );
   }
