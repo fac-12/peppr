@@ -9,11 +9,13 @@ class RecipeList extends Component {
   renderPosts() {
     return _.map(this.props.recipes, recipe => {
       return (
-        <div key={recipe.id} className='recipeList__container'>
-          <Link to={`/recipes/${recipe.id}`}>
-            <img src={recipe.imageurl} className='recipeList__img'/>
-          </Link>
-          <p className='recipeList__recipeTitle'>{recipe.title}</p>
+        <div key={recipe.id}>
+          <div className='recipeList__container'>
+            <Link to={`/recipes/${recipe.id}`} className='recipeList__link'>
+              <img src={recipe.imageurl} className='recipeList__img'/>
+            </Link>
+            <p className='recipeList__recipeTitle'>{recipe.title}</p>
+          </div>
         </div>
       );
     });
@@ -21,10 +23,11 @@ class RecipeList extends Component {
 
   render() {
     return (
-      <div>
+      <div >
+        <div className='recipeList__allrecipes'>
+          {this.renderPosts()}
+        </div>
         <Navbar />
-        {this.renderPosts()}
-
       </div>
     );
   }

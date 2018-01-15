@@ -130,6 +130,7 @@
     width: 100vw;
     background: #D6472C;
     position: relative;
+    margin-bottom: 15px;
 }
 
 .mobileBanner__title {
@@ -150,19 +151,39 @@
   $ Recipe List
 ***********************************************/
 
-.recipeList__img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    padding: 15px;
-    border-radius: 20px;
+.recipeList__allrecipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
 }
 
 .recipeList__container {
     display: flex;
-    border-bottom: 1px solid  rgba(198, 197, 197, 0.2);
+    flex-direction: column;
+    width: 170px;
 }
 
+.recipeList__link {
+    width: 170px;
+}
+
+.recipeList__img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* .recipeList__img:nth-child(even) {
+    margin-right: 15px;
+    margin-left: 2.5px;
+    margin-bottom: 2.5px;
+} */
+
 .recipeList__recipeTitle {
-    margin-top: 15px;
+    margin: 0 0 15px 15px;
+    font-size: 12px;
+    display: none;
 }
