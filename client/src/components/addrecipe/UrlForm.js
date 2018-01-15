@@ -5,8 +5,23 @@ import { checkUrl } from "../../actions/recipes";
 
 class UrlForm extends Component {
 
-  renderField(field) {
+  render() {
+    const { handleSubmit } = this.props;
 
+    return (
+        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+          <Field
+            label="Enter a recipe URL from one of our partner sites to save the recipe automatically:"
+            name="url"
+            component={this.renderField}
+          /> 
+          <button type="submit"><i className="ion-ios-download-outline"></i></button>
+          {this.renderAlert()}
+        </form>
+    );
+  }
+
+  renderField(field) {
     const { meta: { touched, error } } = field;
 
     return (
@@ -32,23 +47,6 @@ class UrlForm extends Component {
           </p>
       );
     }
-  }
-
-  render() {
-
-    const { handleSubmit } = this.props;
-
-    return (
-        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-          <Field
-            label="Enter your favourite online recipe URL:"
-            name="url"
-            component={this.renderField}
-          />
-          <input type="submit" />
-          {this.renderAlert()}
-        </form>
-    );
   }
 }
 
