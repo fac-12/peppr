@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import _ from 'lodash';
+
+import { getRecipes } from '../../actions/recipes';
 import RecipeList from './RecipeList';
 import Navbar from '../Navbar';
 import NoRecipes from './NoRecipes';
-import { connect } from "react-redux";
-import { getRecipes } from '../../actions/recipes';
-import _ from 'lodash';
+import Banner from '../mobileBanner';
 
 class Recipes extends Component {
 
@@ -19,9 +21,11 @@ class Recipes extends Component {
     if(!recipes) return <Navbar />
 
     return (
+      
       <div>
-        <Navbar />
+        <Banner />
         { _.isEmpty(recipes) ? <NoRecipes/> : <RecipeList /> }
+        <Navbar />
       </div>
     );
   }
