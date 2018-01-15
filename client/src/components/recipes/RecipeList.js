@@ -9,11 +9,11 @@ class RecipeList extends Component {
   renderPosts() {
     return _.map(this.props.recipes, recipe => {
       return (
-        <div key={recipe.id}>
+        <div key={recipe.id} className='recipeList__container'>
           <Link to={`/recipes/${recipe.id}`}>
             <img src={recipe.imageurl} className='recipeList__img'/>
           </Link>
-          <p>{recipe.title}</p>
+          <p className='recipeList__recipeTitle'>{recipe.title}</p>
         </div>
       );
     });

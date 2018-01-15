@@ -152,4 +152,17 @@
 
 .recipeList__img {
     width: 100px;
+    height: 100px;
+    object-fit: cover;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.recipeList__container {
+    display: flex;
+    border-bottom: 1px solid  rgba(198, 197, 197, 0.2);
+}
+
+.recipeList__recipeTitle {
+    margin-top: 15px;
 }
