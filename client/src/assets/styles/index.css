@@ -20,8 +20,14 @@
     z-index: -1;
 }
 
+.landing__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .landing__header {
-    padding: 2.5em 0 0.5em;
+    padding: 2em 0 0.5em;
     text-align: center;
     color: white;
     letter-spacing: 2.5px;
@@ -34,20 +40,12 @@
     color: white;
 }
 
-.landing__form__container {
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .landing__input {
     outline: none;
     border: 0;
     background: none;
     border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
     width: 205px;
-    padding-bottom: 1em;
     margin: 2em 0;
     color: white;
     font-size: 14px;
@@ -61,6 +59,12 @@
 .landing__input--errortext {
     color: white;
     font-size: 10px;
+}
+
+.landing__form__container {
+    display: flex;
+    align-items: flex-end;
+    height: 60vh;
 }
 
 .landing__form__btn {
@@ -78,7 +82,10 @@
 
 .landing__form__togglelink {
     text-align: center;
-    display: block;
+    margin: 0 auto;
+    position: fixed;
+    width: 205px;
+    bottom: 3em;
     font-size: 13px;
     color: white;
     text-decoration: none;

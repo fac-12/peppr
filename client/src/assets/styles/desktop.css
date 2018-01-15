@@ -30,6 +30,7 @@
     }
     .landing__form__btn {
         background-color: #D6472C;
+        border: none;
         color: white;
     }
 }

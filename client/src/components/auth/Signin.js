@@ -8,8 +8,7 @@ class SignIn extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <section>
-        <div className="landing__form__container">
+      <section className="landing__form__container">
           <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
             <Field
               name='email'
@@ -26,10 +25,8 @@ class SignIn extends Component {
             {this.renderAlert()}
             <input type="submit" defaultValue="Login" className="landing__form__btn"/>
           </form>
-        </div>
         <Link to='/signup' className="landing__form__togglelink">New to Peppr? Sign up</Link>
       </section>
-
     )
   }
 
