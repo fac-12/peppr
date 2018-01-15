@@ -5,25 +5,6 @@ import { addRecipe } from "../../actions/recipes";
 
 class NewRecipeForm extends Component {
 
-  renderField(field) {
-
-    const { meta: { touched, error } } = field;
-
-    return (
-      <div>
-        <label>{field.label}</label>
-        {field.textfield ? <textarea rows="10" cols="50" {...field.input} /> : <input type="text" {...field.input} />}
-        <div>
-          {touched ? error : ""}
-        </div>
-      </div>
-    )
-  }
-
-  onSubmit(values) {
-    this.props.addRecipe(values);
-  }
-
   render() {
     const { handleSubmit } = this.props;
 
@@ -59,9 +40,27 @@ class NewRecipeForm extends Component {
             textfield={false}
             component={this.renderField}
           />
-          <input type="submit" />
+          <input type="submit" defaultValue="Save"/>
         </form>
     );
+  }
+
+  renderField(field) {
+    const { meta: { touched, error } } = field;
+
+    return (
+      <div>
+        <label>{field.label}</label>
+        {field.textfield ? <textarea rows="10" cols="50" {...field.input} /> : <input type="text" {...field.input} />}
+        <div>
+          {touched ? error : ""}
+        </div>
+      </div>
+    )
+  }
+
+  onSubmit(values) {
+    this.props.addRecipe(values);
   }
 }
 

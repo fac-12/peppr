@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CHECK_URL, ADD_RECIPE, GET_RECIPES, GET_SINGLE_RECIPE, DELETE_RECIPE } from './types';
+import { CHECK_URL, ADD_RECIPE, GET_RECIPES, GET_SINGLE_RECIPE, DELETE_RECIPE, SHOW_FORM } from './types';
 import { authError } from './auth';
 import history from './history';
 
@@ -11,6 +11,7 @@ export const checkUrl = (values) => {
         type: CHECK_URL,
         payload: response.data
       })
+      dispatch(showForm());
     })
     .catch(error => {
       dispatch(authError('Sorry, we can\'t find the recipe details from this url.\nPlease try one of our partner recipe sites'));
@@ -78,5 +79,11 @@ export const deleteRecipe = (id) => {
       });
       history.push('/recipes');
     })
+  }
+}
+
+export const showForm = () => {
+  return {
+    type: SHOW_FORM
   }
 }
