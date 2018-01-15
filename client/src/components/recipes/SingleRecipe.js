@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { getSingleRecipe, deleteRecipe } from '../../actions/recipes';
-import _ from 'lodash';
 
 class SingleRecipe extends Component {
 
@@ -38,7 +37,7 @@ class SingleRecipe extends Component {
         <ul>{this.renderStringToList(recipe.ingredients)}</ul>
         <h2>Method</h2>
         <ol>{this.renderStringToList(recipe.method)}</ol>
-        <img src={recipe.imageurl} />
+        <img src={recipe.imageurl} alt={recipe.title}/>
       </div>
     );
   }

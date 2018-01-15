@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import UrlForm from './UrlForm';
 import NewRecipeForm from './NewRecipeForm';
@@ -6,7 +6,6 @@ import Banner from '../mobileBanner';
 import Navbar from '../Navbar';
 
 const AddRecipe = (props) => {
-
   return (
     <div>
       <Banner title={"Add a recipe"}/>

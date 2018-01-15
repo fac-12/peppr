@@ -10,7 +10,7 @@ class RecipeList extends Component {
       return (
         <div key={recipe.id}>
           <Link to={`/recipes/${recipe.id}`}>
-            <img src={recipe.imageurl} />
+            <img src={recipe.imageurl} alt={recipe.title}/>
           </Link>
           <p>{recipe.title}</p>
         </div>
