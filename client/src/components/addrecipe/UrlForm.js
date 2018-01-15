@@ -5,8 +5,12 @@ import { checkUrl } from "../../actions/recipes";
 import { Link } from 'react-router-dom';
 
 class UrlForm extends Component {
-  state = {
-    showModal: false
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false
+    };
   }
 
   render() {
