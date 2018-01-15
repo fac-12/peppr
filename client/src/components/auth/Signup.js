@@ -44,11 +44,12 @@ class SignUp extends Component {
 
   renderField(field) {
     const { meta: { touched, error } } = field;
+    const className = touched && error ? 'landing__input--error' : 'landing__input';
     return ([
       <input {...field.input}
       type={field.type}
       placeholder={field.placeholder}
-      className="landing__input"
+      className={className}
       key={1}
       />,
       <div key={2} className="landing__input--errortext">

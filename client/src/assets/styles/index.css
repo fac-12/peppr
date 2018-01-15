@@ -51,14 +51,27 @@
     font-size: 14px;
 }
 
-.landing__input::placeholder {
+.landing__input::placeholder,
+.landing__input--error::placeholder {
+    color: white;
+    font-size: 14px;
+}
+
+.landing__input--error {
+    outline: none;
+    border: 0;
+    background: none;
+    border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
+    width: 205px;
+    margin: 2em 0 0.25em;
     color: white;
     font-size: 14px;
 }
 
 .landing__input--errortext {
+    font-weight: bold;
     color: white;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .landing__form__container {
