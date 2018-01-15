@@ -10,7 +10,7 @@ class Landing extends Component {
     return (
       <div className="landing">
         <h1 className="landing__header">PEPPR</h1>
-        <p className="landing__tagline">enter tagline</p>
+        <p className="landing__tagline">All your recipes, in one place</p>
         {this.renderForm()}
       </div>
     );

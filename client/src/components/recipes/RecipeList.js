@@ -5,6 +5,14 @@ import _ from 'lodash';
 import Navbar from '../Navbar';
 
 class RecipeList extends Component {
+  render() {
+    return (
+      <div>
+        <h1>My Recipes</h1>
+        {this.renderPosts()}
+      </div>
+    );
+  }
 
   renderPosts() {
     return _.map(this.props.recipes, recipe => {
@@ -12,7 +20,7 @@ class RecipeList extends Component {
         <div key={recipe.id}>
           <div className='recipeList__container'>
             <Link to={`/recipes/${recipe.id}`} className='recipeList__link'>
-              <img src={recipe.imageurl} className='recipeList__img'/>
+              <img src={recipe.imageurl} alt={recipe.title} className='recipeList__img'/>
             </Link>
             <p className='recipeList__recipeTitle'>{recipe.title}</p>
           </div>

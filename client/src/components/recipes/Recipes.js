@@ -9,25 +9,22 @@ import NoRecipes from './NoRecipes';
 import Banner from '../mobileBanner';
 
 class Recipes extends Component {
-
-  componentDidMount() {    
-    this.props.getRecipes();
-  }
-
   render() {
-
     const { recipes } = this.props;
 
     if(!recipes) return <Navbar />
 
     return (
-      
       <div>
         <Banner title={"My recipes"}/>
         { _.isEmpty(recipes) ? <NoRecipes/> : <RecipeList /> }
         <Navbar />
       </div>
     );
+  }
+
+  componentDidMount() {    
+    this.props.getRecipes();
   }
 }
 
