@@ -11,7 +11,7 @@ class RecipeList extends Component {
       return (
         <div key={recipe.id}>
           <Link to={`/recipes/${recipe.id}`}>
-            <img src={recipe.imageurl} />
+            <img src={recipe.imageurl} className='recipeList__img'/>
           </Link>
           <p>{recipe.title}</p>
         </div>
@@ -23,7 +23,6 @@ class RecipeList extends Component {
     return (
       <div>
         <Navbar />
-        <h1>My Recipes</h1>
         {this.renderPosts()}
 
       </div>

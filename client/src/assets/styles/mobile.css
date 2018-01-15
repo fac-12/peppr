@@ -117,3 +117,39 @@
     color: #8A8A8F;
     /* border: 5px solid red; */
 }
+
+/***********************************************
+  $ Mobile Banner
+***********************************************/
+
+.mobileBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 100vw;
+    background: #D6472C;
+    position: relative;
+}
+
+.mobileBanner__title {
+    color: white;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.mobileBanner__backicon {
+    color: white;
+    font-size: 28px;
+    position: absolute;
+    top: 14px;
+    left: 15px;
+}
+
+/***********************************************
+  $ Recipe List
+***********************************************/
+
+.recipeList__img {
+    width: 100px;
+}
