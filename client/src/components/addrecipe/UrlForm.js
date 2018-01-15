@@ -16,7 +16,6 @@ class UrlForm extends Component {
           <p>Enter a recipe URL from one of our <Link to="#" onClick={this.toggleModal.bind(this)}>partner sites</Link> to save the recipe automatically:</p>
           {this.renderModal()}
           <Field
-            label=""
             name="url"
             component={this.renderField}
           /> 
