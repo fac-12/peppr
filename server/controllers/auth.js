@@ -24,12 +24,15 @@ exports.signUp = (req, res) => {
   queries
   .getUser(email)
   .then(user => {
-    if(user){
-      return res.status(422).send({ error: 'Email is in use'})
-    }
-    return hashPassword(password)
+    return new Promise((resolve, reject) => {
+      if(user){
+        res.status(422).send({ error: 'Email is in use'});
+        reject('Email is in use');
+      } else resolve(hashPassword(password));
+    })
   })
   .then(hash => {
+    console.log('hash', hash);
     return queries.addUser(name, email, hash)
   })
   .then (user => {
@@ -37,7 +40,6 @@ exports.signUp = (req, res) => {
   })
   .catch(console.log)
 }
-
 
 exports.getUser = (req, res) => {
   res.send(req.user);
