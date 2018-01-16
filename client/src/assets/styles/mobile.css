@@ -137,12 +137,16 @@
   margin-bottom: 3px;
 }
 
-.navbar__link {
+.navbar__link a {
   text-decoration: none;
 }
 
-.navbar__link:visited {
+.navbar__link a:visited {
   color: #8A8A8F;
+}
+
+.navbar__homelogo {
+  display: none;
 }
 
 
@@ -267,9 +271,14 @@
     left: 15px;
 }
 
+
 /***********************************************
   $ Recipe List
 ***********************************************/
+
+.recipeList__title {
+  display: none;
+}
 
 .recipeList__allrecipes {
     display: flex;
@@ -280,7 +289,7 @@
     margin-bottom: 49px;
 }
 
-.recipeList__container {
+.recipeList__link--container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

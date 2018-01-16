@@ -15,7 +15,7 @@ class Recipes extends Component {
     if(!recipes) return <Navbar />
 
     return (
-      <div>
+      <div>        
         <Banner title={"My recipes"}/>
         { _.isEmpty(recipes) ? <NoRecipes/> : <RecipeList /> }
         <Navbar />
@@ -23,7 +23,7 @@ class Recipes extends Component {
     );
   }
 
-  componentDidMount() {    
+  componentDidMount() {
     this.props.getRecipes();
   }
 }
