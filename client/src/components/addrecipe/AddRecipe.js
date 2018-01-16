@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 
 import UrlForm from './UrlForm';
 import NewRecipeForm from './NewRecipeForm';
-import Banner from '../mobileBanner';
+import Banner from '../MobileBanner';
 import Navbar from '../Navbar';
 import { showForm } from '../../actions/recipes';
+import { resetError } from '../../actions/auth';
 import peppers from '../../assets/images/peppers.jpg';
 
 class AddRecipe extends Component {
@@ -14,7 +15,7 @@ class AddRecipe extends Component {
     return (
       <div>
         <Banner title={"Add a recipe"}/>
-        <img className="addrecipe__image" src={peppers}/>
+        <img className="addrecipe__image" alt="red peppers on a dark background" src={peppers}/>
         <div className="addrecipe__container">
           <h1 className="addrecipe__header">Add a Recipe</h1>
           <UrlForm />
@@ -32,6 +33,10 @@ class AddRecipe extends Component {
 
   showRecipeForm(){
     this.props.showForm();
+  }  
+
+  componentDidMount(){
+    this.props.resetError();
   }
 }
 
@@ -39,4 +44,4 @@ const mapStateToProps = state => {
   return ({ show: state.showForm })
 }
 
-export default connect(mapStateToProps, { showForm })(AddRecipe);
+export default connect(mapStateToProps, { showForm, resetError })(AddRecipe);

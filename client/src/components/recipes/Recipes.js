@@ -6,7 +6,7 @@ import { getRecipes } from '../../actions/recipes';
 import RecipeList from './RecipeList';
 import Navbar from '../Navbar';
 import NoRecipes from './NoRecipes';
-import Banner from '../mobileBanner';
+import Banner from '../MobileBanner';
 
 class Recipes extends Component {
   render() {
