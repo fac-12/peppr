@@ -71,7 +71,9 @@
 .landing__input--errortext {
     font-weight: bold;
     color: white;
+    max-width: 205px;
     font-size: 12px;
+    text-align: center;
 }
 
 .landing__form__container {

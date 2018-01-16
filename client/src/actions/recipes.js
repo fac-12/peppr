@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { CHECK_URL, ADD_RECIPE, GET_RECIPES, GET_SINGLE_RECIPE, DELETE_RECIPE, SHOW_FORM } from './types';
-import { authError } from './auth';
+import { displayError } from './auth';
 import history from './history';
 
 export const checkUrl = (values) => {
@@ -13,8 +13,8 @@ export const checkUrl = (values) => {
       })
       dispatch(showForm());
     })
-    .catch(error => {
-      dispatch(authError('Sorry, we can\'t find the recipe details from this url.\nPlease try one of our partner recipe sites'));
+    .catch(err => {
+      dispatch(displayError('Sorry, we can\'t find the recipe details from this url.\nPlease try one of our partner recipe sites'));
     })
   }
 }
@@ -29,7 +29,7 @@ export const addRecipe = (values) => {
       })
       history.push('/recipes');
     })
-    .catch(error => {
+    .catch(err => {
       history.push('/addrecipe');
     })
   }
@@ -44,7 +44,7 @@ export const getRecipes = () => {
         payload: response.data
       })
     })
-    .catch(error => {
+    .catch(err => {
 
     })
   }
@@ -61,7 +61,7 @@ export const getSingleRecipe = (id) => {
         payload: response.data
       })
     })
-    .catch(error => {
+    .catch(err => {
 
     })
   }
