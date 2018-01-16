@@ -1,6 +1,6 @@
 import axios from 'axios';
 import history from './history';
-import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, RESET_ERROR } from './types'
+import { AUTH_USER, UNAUTH_USER, DISPLAY_ERROR, RESET_ERROR } from './types'
 
 export const getUser = () => {
   return(dispatch) => {
@@ -30,8 +30,8 @@ export const signupUser = values => {
       localStorage.setItem('token', response.data.token)
       history.push('/recipes')
     })
-    .catch(error => {
-      dispatch(authError(error.response.data.error));
+    .catch(err => {
+      dispatch(displayError(err.response.data.error));
     })
   }
 }
@@ -46,16 +46,20 @@ export const signinUser = values => {
       localStorage.setItem('token', response.data.token)
       history.push('/recipes')
     })
-    .catch(error => {
-      dispatch(authError('Email or password was incorrect'));
+    .catch(err => {
+      if (err.message.includes('401')){
+        dispatch(displayError('Email or password was incorrect'));
+      } else {
+        dispatch(displayError("There was an issue with our server. Please try again later"));
+      }
     })
   }
 }
 
-export const authError = (error) => {
+export const displayError = err => {
   return {
-    type: AUTH_ERROR,
-    payload: error
+    type: DISPLAY_ERROR,
+    payload: err
   };
 }
 

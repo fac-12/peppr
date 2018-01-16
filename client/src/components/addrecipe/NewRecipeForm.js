@@ -92,13 +92,13 @@ const validate = (values) => {
   return errors;
 }
 
+const mapStateToProps = state => ({ initialValues: state.newRecipe});
+
 NewRecipeForm = reduxForm({
   validate,
   enableReinitialize: true,
   form: "NewRecipeForm",
 })(NewRecipeForm);
 
-export default NewRecipeForm = connect(
-  state => ({ initialValues: state.newRecipe}),
-  { addRecipe }
-)(NewRecipeForm);
+
+export default connect(mapStateToProps,{ addRecipe })(NewRecipeForm);

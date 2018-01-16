@@ -126,4 +126,30 @@
         left: 5vw;
         position: absolute;
     }
+    /***********************************************
+    $ Error pages
+    ***********************************************/
+    .errorpage__container {
+        width: 40vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .errorpage__image {
+        height: 100%;
+        min-width: 60%;
+        width: auto;
+        z-index: -1;
+        top: 0;
+        left: 40%;
+        position: fixed;
+    }
+    .errorpage__message {
+        color: black;
+        width: 30vw;
+    }
+    .errorpage__message--large {
+        color: black;
+    }
 }

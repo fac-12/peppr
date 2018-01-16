@@ -26,8 +26,8 @@ exports.signUp = (req, res) => {
   .then(user => {
     return new Promise((resolve, reject) => {
       if(user){
-        res.status(422).send({ error: 'Email is in use'});
-        reject('Email is in use');
+        res.status(422).send({ error: 'Email is in use. Please sign in'});
+        reject('Email is in use. Please sign in');
       } else resolve(hashPassword(password));
     })
   })

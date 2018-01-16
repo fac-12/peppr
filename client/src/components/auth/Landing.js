@@ -10,7 +10,7 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <img className="landing__image" src={peppers}/>
+        <img className="landing__image" alt="red peppers on a dark background" src={peppers}/>
         <div className="landing__container">
           <h1 className="landing__header">PEPPR</h1>
           <p className="landing__tagline">All your recipes in one place</p>
