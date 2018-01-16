@@ -11,7 +11,7 @@ const NotFound = props => {
       src={peppers}/>
       <div className="errorpage__message">
         <p className="errorpage__message--large">Oops!</p>
-        <p>We can't find the page you're looking for. Please try again or navigate <Link to="/">home</Link></p>
+        <p>404. We can't find the page you're looking for. Please try again or navigate <Link to="/">home</Link></p>
       </div>
     </div>
   )
