@@ -1,4 +1,4 @@
-import { CHECK_URL } from '../actions/types';
+import { FETCH_RECIPE,RESET_RECIPE } from '../actions/types';
 
 const emptyRecipe = {
   title: '',
@@ -11,8 +11,10 @@ const emptyRecipe = {
 export default (state = emptyRecipe, action) => {
 
   switch (action.type) {
-    case CHECK_URL:
+    case FETCH_RECIPE:
       return action.payload;
+    case RESET_RECIPE:
+      return emptyRecipe;
     default:
       return state;
   }

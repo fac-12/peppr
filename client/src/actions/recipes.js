@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CHECK_URL, ADD_RECIPE, GET_RECIPES, GET_SINGLE_RECIPE, DELETE_RECIPE, SHOW_FORM } from './types';
+import { FETCH_RECIPE, ADD_RECIPE, GET_RECIPES, GET_SINGLE_RECIPE, DELETE_RECIPE, SHOW_FORM, RESET_RECIPE } from './types';
 import { displayError } from './auth';
 import history from './history';
 
@@ -8,7 +8,7 @@ export const checkUrl = (values) => {
     axios.post('/urlscraper', values)
     .then(response => {
       dispatch({
-        type: CHECK_URL,
+        type: FETCH_RECIPE,
         payload: response.data
       })
       dispatch(showForm());
@@ -16,6 +16,12 @@ export const checkUrl = (values) => {
     .catch(err => {
       dispatch(displayError(err.response.data.error));
     })
+  }
+}
+
+export const resetRecipe =() =>{
+  return {
+    type: RESET_RECIPE
   }
 }
 
