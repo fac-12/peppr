@@ -14,7 +14,7 @@ export const checkUrl = (values) => {
       dispatch(showForm());
     })
     .catch(err => {
-      dispatch(displayError('Sorry, we can\'t find the recipe details from this url.\nPlease try one of our partner recipe sites'));
+      dispatch(displayError(err.response.data.error));
     })
   }
 }

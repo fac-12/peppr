@@ -15,7 +15,7 @@ class AddRecipe extends Component {
       <div>
         <Banner title={"Add a recipe"}/>
         <img className="addrecipe__image" src={peppers}/>
-        <div class="addrecipe__container">
+        <div className="addrecipe__container">
           <h1 className="addrecipe__header">Add a Recipe</h1>
           <UrlForm />
           <Link 
