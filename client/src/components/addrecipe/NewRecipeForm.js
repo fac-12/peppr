@@ -9,38 +9,39 @@ class NewRecipeForm extends Component {
     const { handleSubmit } = this.props;
 
     return (
-        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        <form className="newrecipe__form__container" 
+        onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field
-            label="Title"
+            placeholder="Title"
             name="title"
             textfield={false}
             component={this.renderField}
           />
           <Field
-            label="Ingredients"
+            placeholder="Ingredients"
             name="ingredients"
             textfield={true}
             component={this.renderField}
           />
           <Field
-            label="Method"
+            placeholder="Method"
             name="method"
             textfield={true}
             component={this.renderField}
           />
           <Field
-            label="Image Url (optional)"
+            placeholder="Image Url (optional)"
             name="imageUrl"
             textfield={false}
             component={this.renderField}
           />
           <Field
-            label="Tags (optional)"
+            placeholder="Tags (optional)"
             name="tags"
             textfield={false}
             component={this.renderField}
           />
-          <input type="submit" defaultValue="Save"/>
+          <input type="submit" className="newrecipe__form__btn" defaultValue="Save"/>
         </form>
     );
   }
@@ -49,9 +50,19 @@ class NewRecipeForm extends Component {
     const { meta: { touched, error } } = field;
 
     return (
-      <div>
-        <label>{field.label}</label>
-        {field.textfield ? <textarea rows="10" cols="50" {...field.input} /> : <input type="text" {...field.input} />}
+      <div className="newrecipe__form">
+        {field.textfield
+        ? <textarea 
+          rows="8" 
+          cols="50" 
+          className="newrecipe__textarea" 
+          placeholder={field.placeholder}
+          {...field.input} /> 
+        : <input 
+            type="text"
+            className="newrecipe__input" 
+            placeholder={field.placeholder}
+            {...field.input} />}
         <div>
           {touched ? error : ""}
         </div>

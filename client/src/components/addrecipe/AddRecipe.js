@@ -13,10 +13,16 @@ class AddRecipe extends Component {
     return (
       <div>
         <Banner title={"Add a recipe"}/>
-        <h1>Add a Recipe</h1>
-        <UrlForm />
-        <Link to='#' onClick={this.showRecipeForm.bind(this)}>or enter your recipe details manually</Link>
-        {this.props.show ? <NewRecipeForm /> : <div></div>}
+        <div class="addrecipe__container">
+          <h1 className="addrecipe__header">Add a Recipe</h1>
+          <UrlForm />
+          <Link 
+          to='#' 
+          onClick={this.showRecipeForm.bind(this)}
+          className="addrecipe__link"
+          >Or enter your recipe details manually</Link>
+          {this.props.show ? <NewRecipeForm /> : <div></div>}
+        </div>
         <Navbar />
       </div>
     );

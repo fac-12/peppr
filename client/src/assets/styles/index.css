@@ -134,3 +134,101 @@ navbar__icon {
 .navbar__link {
     text-decoration: none;
 }
+
+
+/***********************************************
+  $ Add recipe 
+***********************************************/
+
+.banner {
+    height: 64px;
+    background-color: #D6472C;
+}
+
+.addrecipe__container {
+    width: 330px;
+    margin: auto;
+}
+
+.addrecipe__header {
+    font-size: 20px;
+    margin: 2em auto 3em;
+}
+
+.urlform__modal {
+    position: fixed;
+    top: 100px;
+    right: 18px;
+    border: 0.03em solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px grey;
+    padding: 0.5em;
+}
+
+.urlform__text {
+    font-size: 16px;
+}
+
+.urlform {
+    display: flex;
+    justify-content: space-around;
+}
+
+.urlform__input {
+    outline: none;
+    background: none;
+    border: 0.03em solid rgba(0, 0, 0, 0.99);
+    border-radius: 5px;
+    height: 49px;
+    width: 260px;
+    margin: 2em 0;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.urlform__btn {
+    font-size: 24px;
+    margin: 0.5em;
+    color: #D6472C;
+}
+
+.addrecipe__link {
+    font-size: 14px;
+}
+
+.newrecipe__form {
+    width: 330px;
+}
+
+.newrecipe__input,
+.newrecipe__textarea {
+    outline: none;
+    border: 0;
+    background: none;
+    border-bottom: 0.03em solid rgba(0, 0, 0, 0.99);
+    width: 100%;
+    margin: 2em 0;
+    font-size: 14px;
+}
+
+.newrecipe__input::placeholder,
+.newrecipe__textarea::placeholder {
+    font-size: 14px;
+}
+
+.newrecipe__form__container {
+    margin-bottom: 6em;
+}
+
+.newrecipe__form__btn {
+    font-size: 18px;
+    border-radius: 5px;
+    width: 330px;
+    height: 58px;
+    background-color: #D6472C;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+}
