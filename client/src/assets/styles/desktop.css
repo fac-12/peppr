@@ -1,6 +1,54 @@
-@media (min-width:961px) {
+@media (min-width:800px) {
+
     /***********************************************
-    $ Landing Page 
+    $ Mobile Banner
+    ***********************************************/
+    .mobileBanner {
+      display: none;
+    }
+
+    /***********************************************
+    $ Navbar
+    ***********************************************/
+    .navbar {
+      left: 0;
+      top: 0;
+      position: absolute;
+      background: #D6472C;
+      height: 70px;
+    }
+
+    .navbar li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar__link a, .navbar__link a:visited, .navbar__homelogo a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .navbar__link {
+      margin: 20px;
+      font-size: 14px;
+    }
+
+    .navbar__icon {
+      display: none;
+    }
+
+    .navbar__homelogo {
+      font-size: 18px;
+      font-weight: 100;
+      display: inline;
+      margin: 15px;
+      margin-right: auto;
+    }
+
+
+    /***********************************************
+    $ Landing Page
     ***********************************************/
     .landing__image {
         height: 100%;
@@ -37,8 +85,30 @@
         border: none;
         color: white;
     }
+
     /***********************************************
-    $ Add recipe 
+    $ Recipe List
+    ***********************************************/
+
+    .recipeList__title {
+      display: block;
+      color: black;
+      margin-top: 100px;
+      margin-left: 20px;
+    }
+
+
+    .recipeList__allrecipes {
+
+    }
+
+    .recipeList__link {
+      width: 300px;
+      margin: 10px;
+    }
+
+    /***********************************************
+    $ Add recipe
     ***********************************************/
     .addrecipe__image {
         display: block;
@@ -57,7 +127,7 @@
         position: absolute;
     }
     /***********************************************
-    $ Error pages 
+    $ Error pages
     ***********************************************/
     .errorpage__container {
         width: 40vw;
