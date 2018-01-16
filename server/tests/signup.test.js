@@ -32,7 +32,6 @@ const signUpTest = () => {
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
-          console.log(res.body);
           t.equal(res.body.hasOwnProperty('token'), true, 'response object should have a property "token"');
           t.end();
         });

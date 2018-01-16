@@ -32,7 +32,6 @@ exports.signUp = (req, res) => {
     })
   })
   .then(hash => {
-    console.log('hash', hash);
     return queries.addUser(name, email, hash)
   })
   .then (user => {
