@@ -18,8 +18,7 @@ class RecipeList extends Component {
     return _.map(this.props.recipes, recipe => {
       return (
         <Link to={`/recipes/${recipe.id}`} className='recipeList__link recipelist--overlay' key={recipe.id}>
-          <div className='recipeList__container' style={{backgroundImage: `linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(${recipe.imageurl})`}}>
-              {/* <img src={recipe.imageurl} alt={recipe.title} className='recipeList__img'/> */}
+          <div className='recipeList__link--container' style={{backgroundImage: `linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(${recipe.imageurl})`}}>              
             <h2 className='recipeList__recipeTitle'>{recipe.title}</h2>
           </div>
         </Link>
@@ -29,10 +28,11 @@ class RecipeList extends Component {
 
   render() {
     return (
-      <div >
-        <div className='recipeList__allrecipes'>
-          {this.renderPosts()}
-        </div>
+      <div className='recipeList__container'>
+        <h1 className='recipeList__title'>My Recipes</h1>
+          <div className='recipeList__allrecipes'>
+              {this.renderPosts()}
+          </div>
         <Navbar />
       </div>
     );
