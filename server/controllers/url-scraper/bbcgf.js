@@ -3,15 +3,18 @@ const cheerio = require('cheerio');
 
 const bbcgf = (url, req, res) => {
 
-  request(url, (error, response, body) => {
+  request(url, (err, response, body) => {
 
-    if(error) return res.status(500).send();
+    if(err) return res.status(500).send({ error: "There was a  network issue. Please make sure you are connected to the internet"});
 
     const $ = cheerio.load(body);
     const title = $('.recipe-header__title').text();
     let ingredients = '';
     let method = '';
 
+    if (!title){
+      return res.status(422).send({ error: 'Something went wrong. Please make sure the url is complete'})
+    }
 
     $('.ingredients-list__item').each((index, element) => {
         if ($(element).children().first().hasClass('ingredients-list__glossary-link')) {
@@ -30,8 +33,6 @@ const bbcgf = (url, req, res) => {
 
     const imageUrl = `http:${$('.img-container').children().first().attr('src')}`;
     const tags='';
-
-    if(!title || !ingredients || !method || !imageUrl) return res.status(500).send();
 
     const scrapedRecipe = {
       title,

@@ -3,15 +3,18 @@ const cheerio = require('cheerio');
 
 const jamieoliver = (url, req, res) => {
 
-  request(url, (error, response, body) => {
+  request(url, (err, response, body) => {
 
-    if(error) return res.status(500).send();
+    if(err) return res.status(500).send({ error: "There was a  network issue. Please make sure you are connected to the internet"});
 
     const $ = cheerio.load(body);
-
     const title = $('h1.hidden-xs').text();
     let ingredients = '';
     let method = '';
+
+    if (!title){
+      return res.status(422).send({ error: 'Something went wrong. Please make sure the url is complete'})
+    }
 
     $('.ingred-list').children().each((index, element) => {
       const regex = /\S+/gi;
@@ -22,8 +25,6 @@ const jamieoliver = (url, req, res) => {
 
     const imageUrl = `http:${$('picture > source')['0'].attribs.srcset}`;
     const tags = '';
-
-    if(!title || !ingredients || !method || !imageUrl) return res.status(500).send();
 
     const scrapedRecipe = {
       title,
