@@ -23,6 +23,8 @@ CREATE TABLE recipes (
     dateCreated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO users (name, email, password) VALUES ('Mike', 'mike@gmail.com','$2a$10$HEyV6U.nsK.0I4ICu.2tZO.Le09Kt0ni8Wl4NJChqDnvWVKDwptCq'), ('Jim', 'jim@gmail.com', '$2a$10$HEyV6U.nsK.0I4ICu.2tZO.Le09Kt0ni8Wl4NJChqDnvWVKDwptCq');
+INSERT INTO users (name, email, password) VALUES ('Mike', 'mike@gmail.com','$2a$10$HEyV6U.nsK.0I4ICu.2tZO.Le09Kt0ni8Wl4NJChqDnvWVKDwptCq'), ('Jim', 'jim@gmail.com', '$2a$10$hTiKuROKeNPWTFNG/M7EXuF8iOeeymGx6QH1KRAAEijk31AU6UMbG');
+
+INSERT INTO recipes (userId, title, imageurl, ingredients, method, tags) VALUES (2, 'cake', 'https://www.bbcgoodfood.com/sites/default/files/styles/category_retina/public/recipe-collections/collection-image/2013/05/rosewater-raspberry-sponge-cake.jpg?itok=OVpUSQm9', 'flour\neggs\ncream', 'make cake\n\neat it', 'party');
 
 COMMIT;
