@@ -7,12 +7,14 @@ import NewRecipeForm from './NewRecipeForm';
 import Banner from '../mobileBanner';
 import Navbar from '../Navbar';
 import { showForm } from '../../actions/recipes';
+import peppers from '../../assets/images/peppers.jpg';
 
 class AddRecipe extends Component {
   render(){
     return (
       <div>
         <Banner title={"Add a recipe"}/>
+        <img className="addrecipe__image" src={peppers}/>
         <div class="addrecipe__container">
           <h1 className="addrecipe__header">Add a Recipe</h1>
           <UrlForm />

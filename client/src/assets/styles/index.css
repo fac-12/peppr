@@ -140,11 +140,6 @@ navbar__icon {
   $ Add recipe 
 ***********************************************/
 
-.banner {
-    height: 64px;
-    background-color: #D6472C;
-}
-
 .addrecipe__container {
     width: 330px;
     margin: auto;
@@ -231,4 +226,8 @@ navbar__icon {
     text-transform: uppercase;
     border: none;
     color: white;
+}
+
+.addrecipe__image {
+    display: none;
 }
