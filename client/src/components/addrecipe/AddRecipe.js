@@ -7,6 +7,7 @@ import NewRecipeForm from './NewRecipeForm';
 import Banner from '../mobileBanner';
 import Navbar from '../Navbar';
 import { showForm } from '../../actions/recipes';
+import { resetError } from '../../actions/auth';
 import peppers from '../../assets/images/peppers.jpg';
 
 class AddRecipe extends Component {
@@ -33,10 +34,14 @@ class AddRecipe extends Component {
   showRecipeForm(){
     this.props.showForm();
   }  
+
+  componentDidMount(){
+    this.props.resetError();
+  }
 }
 
 const mapStateToProps = state => {
   return ({ show: state.showForm })
 } 
 
-export default connect(mapStateToProps, { showForm })(AddRecipe);
+export default connect(mapStateToProps, { showForm, resetError })(AddRecipe);
