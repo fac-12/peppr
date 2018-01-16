@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, Redirect } from 'react-router-dom';
+import { Router, Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUser } from '../actions/auth'
 
@@ -8,14 +8,15 @@ import Landing from './auth/Landing';
 import AddRecipe from './addrecipe/AddRecipe';
 import Recipes from './recipes/Recipes';
 import SingleRecipe from './recipes/SingleRecipe';
-
+import ServerError from './errors/ServerError500';
+import NotFound from './errors/NotFound400';
 
 class App extends Component {
   render() {
     if (this.props.auth === null) return <div></div>
     return (
         <Router history={history}>
-          <div>
+          <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/signup" component={Landing} />
             <Route exact path="/recipes"
@@ -25,7 +26,9 @@ class App extends Component {
             <Route exact path="/addrecipe"
             render={() => (this.props.auth ? (<AddRecipe/>) : (<Redirect to="/"/>))}
             />
-          </div>
+            <Route exact path="/servererror" component={ServerError}/>
+            <Route component={NotFound}/>
+          </Switch>
         </Router>
     );
   }

@@ -30,7 +30,7 @@ export const addRecipe = (values) => {
       history.push('/recipes');
     })
     .catch(err => {
-      history.push('/addrecipe');
+      history.push('/servererror');
     })
   }
 }
@@ -45,7 +45,7 @@ export const getRecipes = () => {
       })
     })
     .catch(err => {
-
+      history.push('/servererror');
     })
   }
 }
@@ -62,7 +62,7 @@ export const getSingleRecipe = (id) => {
       })
     })
     .catch(err => {
-
+      history.push('/servererror');
     })
   }
 }
@@ -78,6 +78,9 @@ export const deleteRecipe = (id) => {
         payload: id
       });
       history.push('/recipes');
+    })
+    .catch(err => {
+      history.push('/servererror');
     })
   }
 }

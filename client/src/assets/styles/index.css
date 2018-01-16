@@ -233,3 +233,39 @@ navbar__icon {
 .addrecipe__image {
     display: none;
 }
+
+
+/***********************************************
+$ Error pages 
+***********************************************/
+
+.errorpage__container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorpage__image {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.errorpage__message {
+    font-size: 24px;
+    width: 80vw;
+    color: white;
+}
+
+.errorpage__message--large {
+    font-size: 60px;
+    margin-bottom: 0.5em;
+    color: white;
+}
