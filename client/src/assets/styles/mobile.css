@@ -252,7 +252,6 @@
     width: 100vw;
     background: #D6472C;
     position: relative;
-    margin-bottom: 15px;
 }
 
 .mobileBanner__title {
@@ -288,7 +287,7 @@
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
-    height: 200px;
+    height: 270px;
     background-size: cover;
     background-position: center;
     margin-bottom: 10px;
@@ -381,9 +380,54 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
+/***********************************************
+  $ No recipes
+***********************************************/
+
+.noRecipes__container {
+    margin: 0 15px;
+}
+
+.noRecipes__img {
+    width: 100%;
+    height: 250px;
+    /* border-radius: 5px; */
+    background-size: cover;
+    background-position: center;
+    /* margin-bottom: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+    margin-bottom: 24px;
+}
+
+.noRecipes__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 5px;
+    width: 100%;
+    height: 58px;
+    background-color: #D6472C;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.noRecipes__message {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+=======
 
 /***********************************************
-$ Error pages 
+$ Error pages
 ***********************************************/
 
 .errorpage__container {
