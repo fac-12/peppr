@@ -130,15 +130,19 @@
 }
 
 .navbar__icon {
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    color: #8A8A8F;
-    margin-bottom: 3px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  color: #8A8A8F;
+  margin-bottom: 3px;
 }
 
 .navbar__link {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.navbar__link:visited {
+  color: #8A8A8F;
 }
 
 
@@ -322,6 +326,8 @@
 
 .singleRecipe__container {
   margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 80px;
 }
 
 .singleRecipe__title {
@@ -350,8 +356,6 @@
 }
 
 .singleRecipe__list--method {
-  margin-bottom: 49px;
-  margin-right: 15px;
   list-style-position: inside;
 }
 
@@ -360,4 +364,15 @@
   line-height: 28px;
   margin-bottom: 15px;
   text-align: justify;
+}
+
+.singleRecipe__deleteButton {
+  color: #D6472C;
+  background: white;
+  display: block;
+  padding: 10px;
+  border: 1px solid #D6472C;
+  border-radius: 5px;
+  margin-top: 30px;
+  width: 100%;
 }

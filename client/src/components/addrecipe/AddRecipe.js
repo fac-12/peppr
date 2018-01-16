@@ -15,11 +15,11 @@ class AddRecipe extends Component {
       <div>
         <Banner title={"Add a recipe"}/>
         <img className="addrecipe__image" src={peppers}/>
-        <div class="addrecipe__container">
+        <div className="addrecipe__container">
           <h1 className="addrecipe__header">Add a Recipe</h1>
           <UrlForm />
-          <Link 
-          to='#' 
+          <Link
+          to='#'
           onClick={this.showRecipeForm.bind(this)}
           className="addrecipe__link"
           >Or enter your recipe details manually</Link>
@@ -32,11 +32,11 @@ class AddRecipe extends Component {
 
   showRecipeForm(){
     this.props.showForm();
-  }  
+  }
 }
 
 const mapStateToProps = state => {
   return ({ show: state.showForm })
-} 
+}
 
 export default connect(mapStateToProps, { showForm })(AddRecipe);

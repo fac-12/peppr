@@ -21,7 +21,7 @@ class SingleRecipe extends Component {
           <ul className='singleRecipe__list--ingredients'>{this.renderStringToList(recipe.ingredients)}</ul>
           <h2 className='singleRecipe__sub-title'>Method</h2>
           <ol className='singleRecipe__list--method'>{this.renderStringToList(recipe.method)}</ol>
-          <button onClick={this.onDeleteClick.bind(this)}>Delete Recipe</button>
+          <button className='singleRecipe__deleteButton' onClick={this.onDeleteClick.bind(this)}>Delete Recipe</button>
         </div>
         <Navbar />
       </div>
