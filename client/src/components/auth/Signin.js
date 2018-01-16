@@ -8,8 +8,7 @@ class SignIn extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <section>
-        <div className="landing__form__container">
+      <section className="landing__form__container">
           <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
             <Field
               name='email'
@@ -26,20 +25,19 @@ class SignIn extends Component {
             {this.renderAlert()}
             <input type="submit" defaultValue="Login" className="landing__form__btn"/>
           </form>
-        </div>
         <Link to='/signup' className="landing__form__togglelink">New to Peppr? Sign up</Link>
       </section>
-
     )
   }
 
   renderField(field) {
     const { meta: { touched, error } } = field;
+    const className = touched && error ? 'landing__input--error' : 'landing__input';
     return ([
       <input {...field.input}
       type={field.type}
       placeholder={field.placeholder}
-      className="landing__input"
+      className={className}
       key={1}
       />,
       <div key={2} className="landing__input--errortext">

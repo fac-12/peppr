@@ -9,14 +9,25 @@
   $ Landing Page 
 ***********************************************/
 
-.landing {
-    background-image: linear-gradient(rgba(51, 51, 51, .54), rgba(51, 51, 51, .54)), url('../images/katherine-lenhart-440548.jpg');
-    background-size: cover;
-    height: 100vh;
+.landing__image {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.landing__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .landing__header {
-    padding: 2.5em 0 0.5em;
+    padding: 2em 0 0.5em;
     text-align: center;
     color: white;
     letter-spacing: 2.5px;
@@ -29,33 +40,44 @@
     color: white;
 }
 
-.landing__form__container {
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .landing__input {
     outline: none;
     border: 0;
     background: none;
     border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
     width: 205px;
-    padding-bottom: 1em;
     margin: 2em 0;
     color: white;
     font-size: 14px;
 }
 
-.landing__input::placeholder {
+.landing__input::placeholder,
+.landing__input--error::placeholder {
+    color: white;
+    font-size: 14px;
+}
+
+.landing__input--error {
+    outline: none;
+    border: 0;
+    background: none;
+    border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
+    width: 205px;
+    margin: 2em 0 0.25em;
     color: white;
     font-size: 14px;
 }
 
 .landing__input--errortext {
+    font-weight: bold;
     color: white;
-    font-size: 10px;
+    font-size: 12px;
+}
+
+.landing__form__container {
+    display: flex;
+    align-items: flex-end;
+    height: 60vh;
 }
 
 .landing__form__btn {
@@ -73,7 +95,10 @@
 
 .landing__form__togglelink {
     text-align: center;
-    display: block;
+    margin: 0 auto;
+    position: fixed;
+    width: 205px;
+    bottom: 3em;
     font-size: 13px;
     color: white;
     text-decoration: none;
@@ -108,4 +133,101 @@ navbar__icon {
 
 .navbar__link {
     text-decoration: none;
+}
+
+
+/***********************************************
+  $ Add recipe 
+***********************************************/
+
+.addrecipe__container {
+    width: 330px;
+    margin: auto;
+}
+
+.addrecipe__header {
+    font-size: 20px;
+    margin: 2em auto 3em;
+}
+
+.urlform__modal {
+    position: fixed;
+    top: 100px;
+    right: 18px;
+    border: 0.03em solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px grey;
+    padding: 0.5em;
+}
+
+.urlform__text {
+    font-size: 16px;
+}
+
+.urlform {
+    display: flex;
+    justify-content: space-around;
+}
+
+.urlform__input {
+    outline: none;
+    background: none;
+    border: 0.03em solid rgba(0, 0, 0, 0.99);
+    border-radius: 5px;
+    height: 49px;
+    width: 260px;
+    margin: 2em 0;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.urlform__btn {
+    font-size: 24px;
+    margin: 0.5em;
+    color: #D6472C;
+}
+
+.addrecipe__link {
+    font-size: 14px;
+}
+
+.newrecipe__form {
+    width: 330px;
+}
+
+.newrecipe__input,
+.newrecipe__textarea {
+    outline: none;
+    border: 0;
+    background: none;
+    border-bottom: 0.03em solid rgba(0, 0, 0, 0.99);
+    width: 100%;
+    margin: 2em 0;
+    font-size: 14px;
+}
+
+.newrecipe__input::placeholder,
+.newrecipe__textarea::placeholder {
+    font-size: 14px;
+}
+
+.newrecipe__form__container {
+    margin-bottom: 6em;
+}
+
+.newrecipe__form__btn {
+    font-size: 18px;
+    border-radius: 5px;
+    width: 330px;
+    height: 58px;
+    background-color: #D6472C;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+}
+
+.addrecipe__image {
+    display: none;
 }

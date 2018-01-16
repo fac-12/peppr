@@ -7,16 +7,24 @@ import NewRecipeForm from './NewRecipeForm';
 import Banner from '../mobileBanner';
 import Navbar from '../Navbar';
 import { showForm } from '../../actions/recipes';
+import peppers from '../../assets/images/peppers.jpg';
 
 class AddRecipe extends Component {
   render(){
     return (
       <div>
         <Banner title={"Add a recipe"}/>
-        <h1>Add a Recipe</h1>
-        <UrlForm />
-        <Link to='#' onClick={this.showRecipeForm.bind(this)}>or enter your recipe details manually</Link>
-        {this.props.show ? <NewRecipeForm /> : <div></div>}
+        <img className="addrecipe__image" src={peppers}/>
+        <div class="addrecipe__container">
+          <h1 className="addrecipe__header">Add a Recipe</h1>
+          <UrlForm />
+          <Link 
+          to='#' 
+          onClick={this.showRecipeForm.bind(this)}
+          className="addrecipe__link"
+          >Or enter your recipe details manually</Link>
+          {this.props.show ? <NewRecipeForm /> : <div></div>}
+        </div>
         <Navbar />
       </div>
     );

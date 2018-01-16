@@ -17,13 +17,12 @@ class UrlForm extends Component {
     const { handleSubmit } = this.props;
     return (
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-          <p>Enter a recipe URL from one of our <Link to="#" onClick={this.toggleModal.bind(this)}>partner sites</Link> to save the recipe automatically:</p>
+          <p className="urlform__text">Enter a recipe URL from one of our <Link to="#" onClick={this.toggleModal.bind(this)}>partner sites</Link> to save the recipe automatically:</p>
           {this.renderModal()}
           <Field
             name="url"
             component={this.renderField}
           /> 
-          <button type="submit"><i className="ion-ios-download-outline"></i></button>
           {this.renderAlert()}
         </form>
     );
@@ -33,9 +32,13 @@ class UrlForm extends Component {
     const { meta: { touched, error } } = field;
 
     return (
-      <div>
+      <div className="urlform">
         <label>{field.label}</label>
-        <input type="url" {...field.input} />
+        <input 
+        className="urlform__input" 
+        type="url" {...field.input} 
+        placeholder="Enter URL"/>
+        <button type="submit"><i className="ion-ios-download urlform__btn"></i></button>
         <div>
           {touched ? error : ""}
         </div>
@@ -64,7 +67,7 @@ class UrlForm extends Component {
   renderModal(){
     if (this.state.showModal){
       return (
-        <div>
+        <div className="urlform__modal">
           <p>BBC Good Food</p>
           <p>Delicious Magazine</p>
           <p>Jamie Oliver</p>
