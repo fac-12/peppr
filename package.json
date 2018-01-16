@@ -6,6 +6,7 @@
     "scripts": {
         "start": "node ./server/server.js",
         "start-test": "NODE_ENV=production node ./server/server.js",
+        "test": "NODE_ENV=test tape ./server/tests/routes.test.js | tap-spec",
         "client": "node start-client.js",
         "server": "nodemon ./server/server.js",
         "dev": "concurrently \"npm run server\" \"npm run client\""
@@ -21,7 +22,10 @@
     },
     "homepage": "https://github.com/fac-12/peppr#readme",
     "devDependencies": {
-        "concurrently": "^3.5.1"
+        "concurrently": "^3.5.1",
+        "supertest": "^3.0.0",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.8.0"
     },
     "dependencies": {
         "axios": "^0.17.1",
