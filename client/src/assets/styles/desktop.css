@@ -222,32 +222,15 @@
       margin: 30px;
     }
 
-    .singleRecipe__title {
-
-    }
-
-    .singleRecipe__sub-title {
-
-    }
-
-    .singleRecipe__list--ingredients {
-
-    }
-
-    .singleRecipe__list--ingredients li {
-
-    }
-
-    .singleRecipe__list--method {
-
-    }
-
-    .singleRecipe__list--method li {
-
-    }
 
     .singleRecipe__deleteButton {
+      -webkit-transition: all 0.2s ease-in-out 0s;
+      transition: all 0.2s ease-in-out 0s;
+    }
 
+    .singleRecipe__deleteButton:hover {
+      color: white;
+      background: rgba(214, 71, 44, 0.95);
     }
 
 }
