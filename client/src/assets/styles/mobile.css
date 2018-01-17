@@ -401,17 +401,17 @@
 ***********************************************/
 
 .noRecipes__container {
-    margin: 0 15px;
+    margin: 50px 15px;
 }
 
 .noRecipes__img {
     width: 100%;
     height: 250px;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     background-size: cover;
     background-position: center;
-    /* margin-bottom: 10px; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: -15px;
@@ -424,7 +424,7 @@
     align-items: center;
     font-size: 15px;
     border-radius: 5px;
-    width: 100%;
+    width: 60%;
     height: 58px;
     background-color: #D6472C;
     text-transform: uppercase;
@@ -436,7 +436,7 @@
 }
 
 .noRecipes__message {
-    font-size: 20px;
+    font-size: 12px;
     letter-spacing: 1px;
     margin-bottom: 24px;
 }
