@@ -240,6 +240,14 @@ a:hover {
     color: #D6472C;
 }
 
+.urlform__input--errortext {
+    color: #D6472C;
+    font-size: 14px;
+    font-weight: 100;
+    text-align: left;
+    margin: -1.5em 0 2em;
+}
+
 .addrecipe__link {
     font-size: 14px;
     font-weight: 100;
@@ -260,6 +268,14 @@ a:hover {
     font-size: 14px;
     padding: 0.5em;
     color: #333;
+}
+
+.newrecipe__input--errortext {
+    color: #D6472C;
+    font-size: 14px;
+    font-weight: 100;
+    text-align: left;
+    margin: -1.5em 0 2em;
 }
 
 .newrecipe__input::placeholder,

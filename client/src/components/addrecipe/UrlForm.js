@@ -36,18 +36,20 @@ class UrlForm extends Component {
     const { meta: { touched, error } } = field;
 
     return (
-      <div className="urlform">
-        <label>{field.label}</label>
-        <input 
-        className="urlform__input" 
-        type="url" {...field.input} 
-        placeholder="Enter URL"/>
-        <button type="submit" className="urlform__btn">
-          <i className="ion-ios-download urlform__btn__icon"></i>
-        </button>
-        <div>
-          {touched ? error : ""}
-        </div>
+      <div>
+        <div className="urlform">
+          <label>{field.label}</label>
+          <input 
+          className="urlform__input" 
+          type="url" {...field.input} 
+          placeholder="Enter URL"/>
+          <button type="submit" className="urlform__btn">
+            <i className="ion-ios-download urlform__btn__icon"></i>
+          </button>
+          </div>
+          <p className="urlform__input--errortext">
+            {touched ? error : ""}
+          </p>
       </div>
     )
   }
@@ -59,7 +61,7 @@ class UrlForm extends Component {
   renderAlert(){
     if (this.props.error){
       return (
-          <p>
+          <p className="urlform__input--errortext">
             <strong>Oops!</strong> {this.props.error}
           </p>
       );

@@ -63,9 +63,9 @@ class NewRecipeForm extends Component {
             className="newrecipe__input" 
             placeholder={field.placeholder}
             {...field.input} />}
-        <div>
+        <p className="newrecipe__input--errortext">
           {touched ? error : ""}
-        </div>
+        </p>
       </div>
     )
   }
