@@ -56,7 +56,7 @@ a:hover {
     background: none;
     border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
     width: 205px;
-    margin: 2em 0;
+    margin: 1.2em 0;
     color: white;
     font-size: 14px;
 }
@@ -73,8 +73,8 @@ a:hover {
     background: none;
     border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
     width: 205px;
-    margin: 2em 0 0.25em;
     color: white;
+    margin: 1.2em 0;
     font-size: 14px;
 }
 
@@ -84,6 +84,7 @@ a:hover {
     max-width: 205px;
     font-size: 12px;
     text-align: center;
+    height: 12px;
 }
 
 .landing__form__container {
@@ -251,6 +252,8 @@ a:hover {
 .addrecipe__link {
     font-size: 14px;
     font-weight: 100;
+    color: #333;
+    text-decoration: underline;
 }
 
 .newrecipe__form {
@@ -356,6 +359,12 @@ a:hover {
     margin-bottom: 10px;
     border-radius: 5px;
     /* box-shadow: 6px 6px 20px 0px rgb(232, 232, 232); */
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.recipeList__link--container:hover {
+    transform: scale(1.03);
 }
 
 .recipeList__link {
@@ -390,7 +399,11 @@ a:hover {
     height: 280px;
 }
 
-.singleRecipe__container {
+.singleRecipe__backarrow {
+    display: none;
+}
+
+.singleRecipe__textcontainer--outer {
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 80px;
@@ -449,17 +462,17 @@ a:hover {
 ***********************************************/
 
 .noRecipes__container {
-    margin: 0 15px;
+    margin: 50px 15px;
 }
 
 .noRecipes__img {
     width: 100%;
     height: 250px;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     background-size: cover;
     background-position: center;
-    /* margin-bottom: 10px; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: -15px;
@@ -472,7 +485,7 @@ a:hover {
     align-items: center;
     font-size: 15px;
     border-radius: 5px;
-    width: 100%;
+    width: 60%;
     height: 58px;
     background-color: #D6472C;
     text-transform: uppercase;
@@ -484,7 +497,7 @@ a:hover {
 }
 
 .noRecipes__message {
-    font-size: 20px;
+    font-size: 12px;
     letter-spacing: 1px;
     margin-bottom: 24px;
 }

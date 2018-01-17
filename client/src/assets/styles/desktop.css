@@ -15,6 +15,9 @@
         background: #D6472C;
         height: 70px;
     }
+    .navbar-mobile-hidden {
+        display: none;
+    }
     .navbar li {
         display: flex;
         justify-content: center;
@@ -65,6 +68,9 @@
     .landing__form__togglelink {
         color: black;
     }
+    .landing__tagline {
+        margin-bottom: 1em;
+    }
     .landing__input,
     .landing__input--error {
         border-bottom: 0.03em solid rgba(0, 0, 0, 0.99);
@@ -101,6 +107,9 @@
         background: rgba(214, 71, 44, 0.95);
         margin-top: 15px;
     }
+    .noRecipes__message {
+        font-size: 18px;
+    }
     /***********************************************
     $ Recipe List
     ***********************************************/
@@ -108,9 +117,12 @@
         display: block;
         color: black;
         margin-top: 100px;
+        margin-bottom: 50px;
         margin-left: 20px;
     }
-    .recipeList__allrecipes {}
+    .recipeList__allrecipes {
+        margin-bottom: 0;
+    }
     .recipeList__link {
         width: 300px;
         margin: 10px;
@@ -169,5 +181,38 @@
     }
     .errorpage__message--large {
         color: black;
+    }
+    /***********************************************
+      $ Single Recipe
+    ***********************************************/
+    .singleRecipe__img {
+        height: 100vh;
+        width: 60%;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    .singleRecipe__backarrow {
+        display: block;
+        color: black;
+        font-size: 28px;
+    }
+    .singleRecipe__textcontainer--outer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        margin: 0;
+    }
+    .singleRecipe__textcontainer--inner {
+        margin: 30px;
+    }
+    .singleRecipe__deleteButton {
+        -webkit-transition: all 0.2s ease-in-out 0s;
+        transition: all 0.2s ease-in-out 0s;
+    }
+    .singleRecipe__deleteButton:hover {
+        color: white;
+        background: rgba(214, 71, 44, 0.95);
     }
 }

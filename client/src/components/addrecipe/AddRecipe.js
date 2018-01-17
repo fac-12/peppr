@@ -6,7 +6,7 @@ import UrlForm from './UrlForm';
 import NewRecipeForm from './NewRecipeForm';
 import Banner from '../MobileBanner';
 import Navbar from '../Navbar';
-import { showForm } from '../../actions/recipes';
+import { showForm,resetRecipe } from '../../actions/recipes';
 import { resetError } from '../../actions/auth';
 import peppers from '../../assets/images/peppers.jpg';
 
@@ -26,17 +26,18 @@ class AddRecipe extends Component {
           >Or enter your recipe details manually</Link>
           {this.props.show ? <NewRecipeForm /> : <div></div>}
         </div>
-        <Navbar addrecipe={true}/>
+        <Navbar page={"addRecipe"}/>
       </div>
     );
   }
 
   showRecipeForm(){
     this.props.showForm();
-  }  
+  }
 
   componentDidMount(){
     this.props.resetError();
+    this.props.resetRecipe();
   }
 }
 
@@ -44,4 +45,4 @@ const mapStateToProps = state => {
   return ({ show: state.showForm })
 }
 
-export default connect(mapStateToProps, { showForm, resetError })(AddRecipe);
+export default connect(mapStateToProps, { showForm, resetError, resetRecipe })(AddRecipe);

@@ -12,21 +12,37 @@ import ServerError from './errors/ServerError500';
 import NotFound from './errors/NotFound400';
 
 class App extends Component {
+  
   render() {
     if (this.props.auth === null) return <div></div>
     return (
         <Router history={history}>
           <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/signup" component={Landing} />
+            
+            <Route exact path="/" 
+              render={props => (!this.props.auth ? (<Landing {...props}/>) : (<Redirect to="/recipes"/>))}
+            />
+
+            <Route exact path="/signup" 
+              render={props => (!this.props.auth ? (<Landing {...props}/>) : (<Redirect to="/recipes"/>))}
+            />
+
             <Route exact path="/recipes"
-            render={() => (this.props.auth ? (<Recipes/>) : (<Redirect to="/"/>))}
+              render={() => (this.props.auth ? (<Recipes/>) : (<Redirect to="/"/>))}
             />
-            <Route exact path="/recipes/:id" render={props => (this.props.auth ? (<SingleRecipe {...props}/>) : (<Redirect to="/"/>))} />
+
+            <Route exact path="/recipes/:id" 
+              render={props => (this.props.auth ? (<SingleRecipe {...props}/>) : (<Redirect to="/"/>))} 
+            />
+
             <Route exact path="/addrecipe"
-            render={() => (this.props.auth ? (<AddRecipe/>) : (<Redirect to="/"/>))}
+              render={() => (this.props.auth ? (<AddRecipe/>) : (<Redirect to="/"/>))}
             />
-            <Route exact path="/servererror" component={ServerError}/>
+
+            <Route exact path="/servererror" 
+              render={() => (this.props.auth ? (<ServerError/>) : (<Redirect to="/"/>))}
+            />
+
             <Route component={NotFound}/>
           </Switch>
         </Router>

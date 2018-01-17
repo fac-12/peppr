@@ -9,7 +9,7 @@ class NewRecipeForm extends Component {
     const { handleSubmit } = this.props;
 
     return (
-        <form className="newrecipe__form__container" 
+        <form className="newrecipe__form__container"
         onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field
             placeholder="Title"
@@ -57,10 +57,10 @@ class NewRecipeForm extends Component {
           cols="50" 
           className="newrecipe__textarea" 
           placeholder={field.placeholder}
-          {...field.input} /> 
-        : <input 
+          {...field.input} />
+        : <input
             type="text"
-            className="newrecipe__input" 
+            className="newrecipe__input"
             placeholder={field.placeholder}
             {...field.input} />}
         <p className="newrecipe__input--errortext">
@@ -73,6 +73,7 @@ class NewRecipeForm extends Component {
   onSubmit(values) {
     this.props.addRecipe(values);
   }
+
 }
 
 const validate = (values) => {
