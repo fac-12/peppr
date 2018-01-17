@@ -53,7 +53,7 @@ class NewRecipeForm extends Component {
       <div className="newrecipe__form">
         {field.textfield
         ? <textarea 
-          rows="8" 
+          rows="4" 
           cols="50" 
           className="newrecipe__textarea" 
           placeholder={field.placeholder}

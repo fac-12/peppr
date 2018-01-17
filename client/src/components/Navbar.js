@@ -5,8 +5,10 @@ import { connect } from 'react-redux';
 
 class Navbar extends Component {
   render() {
+    console.log(this.props)
+    const className = this.props.addrecipe ? "navbar addrecipe__navbar" : "navbar"
     return (
-    <nav className='navbar'>
+    <nav className={className}>
       <ul>
         <li className="navbar__homelogo" >
           <Link to='/recipes'>

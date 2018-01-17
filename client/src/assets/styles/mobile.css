@@ -2,6 +2,16 @@
     font-family: Lato, sans-serif;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: #D6472C;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 
@@ -167,13 +177,27 @@
 }
 
 .urlform__modal {
-    position: fixed;
-    top: 100px;
-    right: 18px;
-    border: 0.03em solid rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    box-shadow: 1px 1px 2px grey;
-    padding: 0.5em;
+    background-color: rgb(249, 249, 249);
+    margin-bottom: 2em;
+    height: 150px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.urlform__modal p {
+    font-weight: 100;
+}
+
+.urlform__modal__imagecontainer {
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.urlform__modal__imagecontainer img {
+    height: 25px;
 }
 
 .urlform__text {
@@ -205,6 +229,12 @@
 }
 
 .urlform__btn {
+    outline: none;
+    background: none;
+    border: none;
+}
+
+.urlform__btn__icon {
     font-size: 36px;
     margin: 0.5em;
     color: #D6472C;
@@ -212,6 +242,7 @@
 
 .addrecipe__link {
     font-size: 14px;
+    font-weight: 100;
 }
 
 .newrecipe__form {
@@ -227,11 +258,14 @@
     width: 100%;
     margin: 2em 0;
     font-size: 14px;
+    padding: 0.5em;
+    color: #333;
 }
 
 .newrecipe__input::placeholder,
 .newrecipe__textarea::placeholder {
     font-size: 14px;
+    color: #333;
 }
 
 .newrecipe__form__container {

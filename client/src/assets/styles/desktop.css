@@ -1,52 +1,45 @@
 @media (min-width:800px) {
-
     /***********************************************
     $ Mobile Banner
     ***********************************************/
     .mobileBanner {
-      display: none;
+        display: none;
     }
-
     /***********************************************
     $ Navbar
     ***********************************************/
     .navbar {
-      left: 0;
-      top: 0;
-      position: fixed;
-      background: #D6472C;
-      height: 70px;
+        left: 0;
+        top: 0;
+        position: fixed;
+        background: #D6472C;
+        height: 70px;
     }
-
     .navbar li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-
-    .navbar__link a, .navbar__link a:visited, .navbar__homelogo a {
-      text-decoration: none;
-      color: white;
+    .navbar__link a,
+    .navbar__link a:visited,
+    .navbar__homelogo a {
+        text-decoration: none;
+        color: white;
     }
-
     .navbar__link {
-      margin: 20px;
-      font-size: 14px;
+        margin: 20px;
+        font-size: 14px;
     }
-
     .navbar__icon {
-      display: none;
+        display: none;
     }
-
     .navbar__homelogo {
-      font-size: 18px;
-      font-weight: 100;
-      display: inline;
-      margin: 15px;
-      margin-right: auto;
+        font-size: 18px;
+        font-weight: 100;
+        display: inline;
+        margin: 15px;
+        margin-right: auto;
     }
-
-
     /***********************************************
     $ Landing Page
     ***********************************************/
@@ -85,56 +78,43 @@
         border: none;
         color: white;
     }
-
     /***********************************************
     $ No recipes
     ***********************************************/
-
     .noRecipes__img {
-       margin-top: 102px;
-       width: 80vw;
-       height: 80vh;
-       border-radius: 5px;
-       display: flex;
-       justify-content: center;
-       flex-direction: column;
-
+        margin-top: 102px;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
-
     .noRecipes__container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
     .noRecipes__btn {
         width: 240px;
         border: 1px solid rgb(208, 62, 33);
         background: rgba(214, 71, 44, 0.95);
         margin-top: 15px;
     }
-
     /***********************************************
     $ Recipe List
     ***********************************************/
-
     .recipeList__title {
-      display: block;
-      color: black;
-      margin-top: 100px;
-      margin-left: 20px;
+        display: block;
+        color: black;
+        margin-top: 100px;
+        margin-left: 20px;
     }
-
-
-    .recipeList__allrecipes {
-
-    }
-
+    .recipeList__allrecipes {}
     .recipeList__link {
-      width: 300px;
-      margin: 10px;
+        width: 300px;
+        margin: 10px;
     }
-
     /***********************************************
     $ Add recipe
     ***********************************************/
@@ -153,6 +133,16 @@
         top: 5vw;
         left: 5vw;
         position: absolute;
+    }
+    .addrecipe__navbar {
+        background-color: rgb(249, 249, 249);
+        /* border-bottom: 1px solid rgb(214, 71, 44); */
+        width: 40vw;
+    }
+    .addrecipe__navbar a,
+    .addrecipe__navbar a:visited,
+    .addrecipe__navbar a {
+        color: #333;
     }
     /***********************************************
     $ Error pages
