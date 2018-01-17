@@ -11,19 +11,20 @@ class SingleRecipe extends Component {
     if (!recipe) return <div>Loading...</div>;
 
     return (
-      <div>
-        {/* <Link to="/recipes">Back To Recipes</Link> */}
-        {/* <img  src={recipe.imageurl} alt={recipe.title}/> */}
+      <div className='singleRecipe__container'>
         <div className='singleRecipe__img' style={{backgroundImage: `url(${recipe.imageurl})`}}></div>
-        <div className='singleRecipe__container'>
-          <h1 className='singleRecipe__title'>{recipe.title}</h1>
-          <h2 className='singleRecipe__sub-title'>Ingredients</h2>
-          <ul className='singleRecipe__list--ingredients'>{this.renderStringToList(recipe.ingredients)}</ul>
-          <h2 className='singleRecipe__sub-title'>Method</h2>
-          <ol className='singleRecipe__list--method'>{this.renderStringToList(recipe.method)}</ol>
-          <button className='singleRecipe__deleteButton' onClick={this.onDeleteClick.bind(this)}>Delete Recipe</button>
+        <div className='singleRecipe__textcontainer--outer'>
+          <div className='singleRecipe__textcontainer--inner'>
+            <Link className="singleRecipe__backarrow" to="/recipes"><i className="ion-ios-arrow-back"></i></Link>
+            <h1 className='singleRecipe__title'>{recipe.title}</h1>
+            <h2 className='singleRecipe__sub-title'>Ingredients</h2>
+            <ul className='singleRecipe__list--ingredients'>{this.renderStringToList(recipe.ingredients)}</ul>
+            <h2 className='singleRecipe__sub-title'>Method</h2>
+            <ol className='singleRecipe__list--method'>{this.renderStringToList(recipe.method)}</ol>
+            <button className='singleRecipe__deleteButton' onClick={this.onDeleteClick.bind(this)}>Delete Recipe</button>
+          </div>
         </div>
-        <Navbar />
+        <Navbar singlePage={true}/>
       </div>
     );
   }
