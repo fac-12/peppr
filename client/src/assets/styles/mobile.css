@@ -309,6 +309,12 @@
     margin-bottom: 10px;
     border-radius: 5px;
     /* box-shadow: 6px 6px 20px 0px rgb(232, 232, 232); */
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.recipeList__link--container:hover {
+  transform: scale(1.03);
 }
 
 .recipeList__link {

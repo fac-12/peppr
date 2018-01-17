@@ -133,12 +133,13 @@
       display: block;
       color: black;
       margin-top: 100px;
+      margin-bottom: 50px;
       margin-left: 20px;
     }
 
 
     .recipeList__allrecipes {
-
+      margin-bottom: 0;
     }
 
     .recipeList__link {
