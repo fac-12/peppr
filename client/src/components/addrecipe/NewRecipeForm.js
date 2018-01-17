@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
-import { addRecipe,resetRecipe } from "../../actions/recipes";
+import { addRecipe } from "../../actions/recipes";
 
 class NewRecipeForm extends Component {
 
@@ -73,9 +73,7 @@ class NewRecipeForm extends Component {
   onSubmit(values) {
     this.props.addRecipe(values);
   }
-  // componentDidMount() {
-  //   this.props.resetRecipe();
-  // }
+
 }
 
 const validate = (values) => {
@@ -104,4 +102,4 @@ NewRecipeForm = reduxForm({
 })(NewRecipeForm);
 
 
-export default connect(mapStateToProps,{ addRecipe,resetRecipe })(NewRecipeForm);
+export default connect(mapStateToProps,{ addRecipe })(NewRecipeForm);
