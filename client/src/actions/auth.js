@@ -24,10 +24,10 @@ export const signupUser = values => {
   return dispatch => {
     axios.post('/signup', values)
     .then(response => {
+      localStorage.setItem('token', response.data.token)
       dispatch({
         type: AUTH_USER
       })
-      localStorage.setItem('token', response.data.token)
       history.push('/recipes')
     })
     .catch(err => {
@@ -40,10 +40,10 @@ export const signinUser = values => {
   return dispatch => {
     axios.post('/signin', values)
     .then(response => {
+      localStorage.setItem('token', response.data.token)
       dispatch({
         type: AUTH_USER
       })
-      localStorage.setItem('token', response.data.token)
       history.push('/recipes')
     })
     .catch(err => {
