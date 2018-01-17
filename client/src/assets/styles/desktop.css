@@ -72,13 +72,16 @@
     .landing__form__togglelink {
         color: black;
     }
+    .landing__tagline {
+      margin-bottom: 1em;
+    }
     .landing__input,
     .landing__input--error {
         border-bottom: 0.03em solid rgba(0, 0, 0, 0.99);
         color: black;
     }
     .landing__input--errortext {
-        color: #D6472C;
+        color: #D6472C;        
     }
     .landing__form__btn {
         background-color: #D6472C;

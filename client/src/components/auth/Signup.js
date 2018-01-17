@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { signupUser } from '../../actions/auth';
+import { signupUser, resetError } from '../../actions/auth';
 
 class SignUp extends Component {
   render() {
@@ -34,7 +34,7 @@ class SignUp extends Component {
               placeholder='Confirm password'
               component={this.renderField}
             />
-            {this.renderAlert()}  
+            <p className="landing__input--errortext">{this.renderAlert()}</p>
             <input type="submit" defaultValue="Sign Up" className="landing__form__btn"/>
           </form>
         <Link to='/' className="landing__form__togglelink">Already a member? Login</Link>
@@ -64,12 +64,12 @@ class SignUp extends Component {
 
   renderAlert(){
     if (this.props.error){
-      return (
-          <p className="landing__input--errortext">
-            <strong>Oops!</strong> {this.props.error}
-          </p>
-      );
-    } 
+      return <span><strong>Oops!</strong> {this.props.error}</span>
+    }
+  }
+
+  componentDidMount() {
+    this.props.resetError();
   }
 }
 
@@ -89,5 +89,5 @@ export default reduxForm ({
   validate,
   form: 'signup'
 })(
-  connect (mapStateToProps, { signupUser })(SignUp)
+  connect (mapStateToProps, { signupUser, resetError })(SignUp)
 )
