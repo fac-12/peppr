@@ -18,6 +18,10 @@
       height: 70px;
     }
 
+    .navbar-mobile-hidden {
+      display: none;
+    }
+
     .navbar li {
       display: flex;
       justify-content: center;
@@ -118,7 +122,7 @@
     }
 
     .noRecipes__message {
-        font-size: 18px;      
+        font-size: 18px;
     }
 
     /***********************************************
@@ -187,4 +191,63 @@
     .errorpage__message--large {
         color: black;
     }
+
+    /***********************************************
+      $ Single Recipe
+    ***********************************************/
+
+    .singleRecipe__img {
+      height: 100vh;
+      width: 60%;
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+
+    .singleRecipe__backarrow {
+      display: block;
+      color: black;
+      font-size: 28px;
+    }
+
+    .singleRecipe__textcontainer--outer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40%;
+      margin: 0;
+    }
+
+    .singleRecipe__textcontainer--inner {
+      margin: 30px;
+    }
+
+    .singleRecipe__title {
+
+    }
+
+    .singleRecipe__sub-title {
+
+    }
+
+    .singleRecipe__list--ingredients {
+
+    }
+
+    .singleRecipe__list--ingredients li {
+
+    }
+
+    .singleRecipe__list--method {
+
+    }
+
+    .singleRecipe__list--method li {
+
+    }
+
+    .singleRecipe__deleteButton {
+
+    }
+
 }
