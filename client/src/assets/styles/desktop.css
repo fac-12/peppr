@@ -90,6 +90,16 @@
     $ Recipe List
     ***********************************************/
 
+    /* .noRecipes__img {
+        margin-top: 100px;
+        margin-right: 118px;
+        margin-left: 118px;
+    } */
+
+    /***********************************************
+    $ Recipe List
+    ***********************************************/
+
     .recipeList__title {
       display: block;
       color: black;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import image from '../../assets/images/no-recipes.jpg';
+import image from '../../assets/images/no-recipes-img.jpg';
 
 class NoRecipes extends Component {
   render() {
