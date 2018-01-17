@@ -15,7 +15,7 @@ const signUpTest = () => {
         .send(alreadyExists)
         .end((err, res) => {
           t.equal(res.status, 422, 'Email in use should return 422 status');
-          t.equal(res.body.error, 'Email is in use', 'Should return error message saying email is in use');
+          t.equal(res.body.error, 'Email is in use. Please login', 'Should return error message saying email is in use');
         });
 
       request(app)

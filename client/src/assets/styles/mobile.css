@@ -46,7 +46,7 @@
     background: none;
     border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
     width: 205px;
-    margin: 2em 0;
+    margin: 1.2em 0;
     color: white;
     font-size: 14px;
 }
@@ -63,9 +63,10 @@
     background: none;
     border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
     width: 205px;
-    margin: 2em 0 0.25em;
     color: white;
+    margin: 1.2em 0;
     font-size: 14px;
+
 }
 
 .landing__input--errortext {
@@ -74,6 +75,7 @@
     max-width: 205px;
     font-size: 12px;
     text-align: center;
+    height: 12px;
 }
 
 .landing__form__container {
@@ -140,15 +142,15 @@
 }
 
 .navbar__link a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .navbar__link a:visited {
-  color: #8A8A8F;
+    color: #8A8A8F;
 }
 
 .navbar__homelogo {
-  display: none;
+    display: none;
 }
 
 
@@ -178,6 +180,8 @@
 
 .urlform__text {
     font-size: 16px;
+    line-height: 28px;
+    font-weight: 100;
 }
 
 .urlform {
@@ -188,19 +192,22 @@
 .urlform__input {
     outline: none;
     background: none;
-    border: 0.03em solid rgba(0, 0, 0, 0.99);
+    border: 1px solid #E0E0E0;
     border-radius: 5px;
     height: 49px;
     width: 260px;
     margin: 2em 0;
-    color: black;
+    color: #333;
     font-size: 14px;
     text-align: center;
-    font-weight: bold;
+}
+
+.urlform__input::placeholder {
+    color: #333;
 }
 
 .urlform__btn {
-    font-size: 24px;
+    font-size: 36px;
     margin: 0.5em;
     color: #D6472C;
 }
@@ -278,7 +285,7 @@
 ***********************************************/
 
 .recipeList__title {
-  display: none;
+    display: none;
 }
 
 .recipeList__allrecipes {
@@ -388,6 +395,7 @@
     width: 100%;
 }
 
+
 /***********************************************
   $ No recipes
 ***********************************************/
@@ -432,6 +440,7 @@
     letter-spacing: 1px;
     margin-bottom: 24px;
 }
+
 
 /***********************************************
 $ Error pages
