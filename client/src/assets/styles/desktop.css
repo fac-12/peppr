@@ -81,7 +81,7 @@
         color: black;
     }
     .landing__input--errortext {
-        color: #D6472C;        
+        color: #D6472C;
     }
     .landing__form__btn {
         background-color: #D6472C;
@@ -115,6 +115,10 @@
         border: 1px solid rgb(208, 62, 33);
         background: rgba(214, 71, 44, 0.95);
         margin-top: 15px;
+    }
+
+    .noRecipes__message {
+        font-size: 15px;      
     }
 
     /***********************************************
