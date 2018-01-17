@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class Navbar extends Component {
   render() {
     return (
-    <nav className='navbar'>
+    <nav className={this.props.singlePage ? 'navbar navbar-mobile-hidden' : 'navbar'}>
       <ul>
         <li className="navbar__homelogo" >
           <Link to='/recipes'>
