@@ -24,7 +24,7 @@ class SingleRecipe extends Component {
             <button className='singleRecipe__deleteButton' onClick={this.onDeleteClick.bind(this)}>Delete Recipe</button>
           </div>
         </div>
-        <Navbar singlePage={true}/>
+        <Navbar page={"singleRecipe"}/>
       </div>
     );
   }
