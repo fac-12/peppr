@@ -9,7 +9,7 @@ class NewRecipeForm extends Component {
     const { handleSubmit } = this.props;
 
     return (
-        <form className="newrecipe__form__container"
+        <form className="newrecipe__form__container addrecipe__innermargin"
         onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field
             placeholder="Title"
@@ -52,10 +52,10 @@ class NewRecipeForm extends Component {
     return (
       <div className="newrecipe__form">
         {field.textfield
-        ? <textarea 
-          rows="4" 
-          cols="50" 
-          className="newrecipe__textarea" 
+        ? <textarea
+          rows="4"
+          cols="50"
+          className="newrecipe__textarea"
           placeholder={field.placeholder}
           {...field.input} />
         : <input
