@@ -30,26 +30,26 @@ const urlScraper = () => {
         .end((err, res) => {
           t.error(err);
           t.equal(res.status, 200, 'request with valid url should generate 200 response');
-        });
 
-      request(app)
-        .post('/urlscraper')
-        .set('authorization', token)
-        .send(nonpartnersite)
-        .end((err, res) => {
-          t.error(err);
-          t.equal(res.body.error, 'We can\'t find recipes from this website. Please try one of our partner sites', 'request from a non partner site should return error message "We can\'t find recipes from this website"');
-        });
+        request(app)
+          .post('/urlscraper')
+          .set('authorization', token)
+          .send(nonpartnersite)
+          .end((err, res) => {
+            t.error(err);
+            t.equal(res.body.error, 'We can\'t find recipes from this website. Please try one of our partner sites', 'request from a non partner site should return error message "We can\'t find recipes from this website"');
 
-      request(app)
-        .post('/urlscraper')
-        .set('authorization', token)
-        .send(badpartnerurl)
-        .end((err, res) => {
-          t.error(err);
-          t.equal(res.body.error, 'Something went wrong. Please make sure the url is complete', 'bad url from a partner site should return error message "Something went wrong. Please make sure the url is complete"');
-          t.end();
-        });  
+          request(app)
+            .post('/urlscraper')
+            .set('authorization', token)
+            .send(badpartnerurl)
+            .end((err, res) => {
+              t.error(err);
+              t.equal(res.body.error, 'Something went wrong. Please make sure the url is complete', 'bad url from a partner site should return error message "Something went wrong. Please make sure the url is complete"');
+              t.end();
+            }); 
+          });
+        });
     });
   })
 }

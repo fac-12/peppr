@@ -13,16 +13,15 @@ const getUserTest = () => {
         .end((err, res) => {
           t.error(err);
           t.equal(res.status, 200, 'request with valid token should generate 200 response');
-        });
 
         request(app)
-        .get('/getuser')
-        .end((err, res) => {
-          t.error(err);
-          t.equal(res.status, 401, 'request without token should return a 401 response');
-          t.end();
+          .get('/getuser')
+          .end((err, res) => {
+            t.error(err);
+            t.equal(res.status, 401, 'request without token should return a 401 response');
+            t.end();
+          });
         });
-
     })
   });
 }

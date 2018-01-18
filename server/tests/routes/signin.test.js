@@ -15,27 +15,26 @@ const signInTest = () => {
         .end((err, res) => {
           t.error(err);
           t.equal(res.status, 401, 'invalid login should return a 401 response');
-        });
 
-      request(app)
-        .post('/signin')
-        .send(invalidPassword)
-        .end((err, res) => {
-          t.error(err);
-          t.equal(res.status, 401, 'invalid password should return a 401 response');
-        });
+        request(app)
+          .post('/signin')
+          .send(invalidPassword)
+          .end((err, res) => {
+            t.error(err);
+            t.equal(res.status, 401, 'invalid password should return a 401 response');
 
-      request(app)
-        .post('/signin')
-        .send(validLogin)
-        .expect(200)
-        .expect('Content-Type', /json/)
-        .end((err, res) => {
-          t.error(err);
-          t.equal(res.body.hasOwnProperty('token'), true, 'response object should have a property "token"');
-          t.end();
+          request(app)
+            .post('/signin')
+            .send(validLogin)
+            .expect(200)
+            .expect('Content-Type', /json/)
+            .end((err, res) => {
+              t.error(err);
+              t.equal(res.body.hasOwnProperty('token'), true, 'response object should have a property "token"');
+              t.end();
+            });
+          });
         });
-
     })
   });
 }
