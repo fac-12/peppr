@@ -15,30 +15,36 @@ class NewRecipeForm extends Component {
             placeholder="Title"
             name="title"
             textfield={false}
+            arialabel="Title"
             component={this.renderField}
           />
           <Field
             placeholder="Ingredients"
             name="ingredients"
             textfield={true}
+            arialabel="Ingredients"
             component={this.renderField}
+            
           />
           <Field
             placeholder="Method"
             name="method"
             textfield={true}
+            arialabel="Method"
             component={this.renderField}
           />
           <Field
             placeholder="Image Url (optional)"
             name="imageUrl"
             textfield={false}
+            arialabel="Image Url (optional)"
             component={this.renderField}
           />
           <Field
             placeholder="Tags (optional)"
             name="tags"
             textfield={false}
+            arialabel="Tags (optional)"
             component={this.renderField}
           />
           <input type="submit" className="newrecipe__form__btn" defaultValue="Save"/>
@@ -56,13 +62,15 @@ class NewRecipeForm extends Component {
           rows="4"
           cols="50"
           className="newrecipe__textarea"
+          aria-label={field.arialabel}
           placeholder={field.placeholder}
           {...field.input} />
         : <input
-            type="text"
-            className="newrecipe__input"
-            placeholder={field.placeholder}
-            {...field.input} />}
+          type="text"
+          className="newrecipe__input"
+          aria-label={field.arialabel}
+          placeholder={field.placeholder}
+          {...field.input} />}
         <p className="newrecipe__input--errortext">
           {touched ? error : ""}
         </p>

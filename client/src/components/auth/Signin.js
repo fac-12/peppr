@@ -14,12 +14,14 @@ class SignIn extends Component {
               name='email'
               type='email'
               placeholder='Email'
+              arialabel='Email'
               component={this.renderField}
             />
             <Field
               name='password'
               type='password'
               placeholder='Password'
+              arialabel='Password'
               component={this.renderField}
             />
             <p className="landing__input--errortext">{this.renderAlert()}</p>
@@ -38,6 +40,7 @@ class SignIn extends Component {
       type={field.type}
       placeholder={field.placeholder}
       className={className}
+      aria-label={field.arialabel}
       key={1}
       />,
       <div key={2} className="landing__input--errortext">
