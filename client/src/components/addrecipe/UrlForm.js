@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { checkUrl } from "../../actions/recipes";
-import { Link } from 'react-router-dom';
 
 import goodfood from '../../assets/images/goodfood.png'
 import delicious from '../../assets/images/delicious.png'
@@ -17,15 +16,22 @@ class UrlForm extends Component {
           <p className="urlform__text addrecipe__innermargin">Enter a recipe URL from one of our partner sites to save the recipe automatically:</p>
           <Field
             name="url"
+            arialabel="Url"
             component={this.renderField}
           />
           {this.renderAlert()}
           <div className="urlform__modal">
             <p className="addrecipe__innermargin addrecipe__partnersite--text">Our partner sites are:</p>
             <div className="urlform__modal__imagecontainer addrecipe__innermargin">
-              <a href="https://www.bbcgoodfood.com/" target="_blank"><img src={goodfood}/></a>
-              <a href="https://www.jamieoliver.com/" target="_blank"> <img src={jamieoliver}/></a>
-              <a href="http://www.deliciousmagazine.co.uk/" target="_blank"> <img src={delicious}/></a>
+              <a href="https://www.bbcgoodfood.com/" target="_blank">
+                <img src={goodfood} alt="BBC Good Food logo"/>
+              </a>
+              <a href="https://www.jamieoliver.com/" target="_blank">
+                <img src={jamieoliver} alt="Jamie Oliver logo"/>
+              </a>
+              <a href="http://www.deliciousmagazine.co.uk/" target="_blank">
+                <img src={delicious} alt="Delicious Magazine logo"/>
+              </a>
             </div>
           </div>
         </form>
@@ -42,7 +48,9 @@ class UrlForm extends Component {
           <input
           className="urlform__input"
           type="url" {...field.input}
-          placeholder="Enter URL"/>
+          placeholder="Enter URL"
+          aria-label={field.arialabel}
+          />
           <button type="submit" className="urlform__btn">
             <i className="ion-ios-download urlform__btn__icon"></i>
           </button>

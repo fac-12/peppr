@@ -14,24 +14,28 @@ class SignUp extends Component {
               name='name'
               type='text'
               placeholder='Name'
+              arialabel='Name'
               component={this.renderField}
             />
             <Field
               name='email'
               type='email'
               placeholder='Email'
+              arialabel='Email'
               component={this.renderField}
             />
             <Field
               name='password'
               type='password'
               placeholder='Password'
+              arialabel='Password'
               component={this.renderField}
             />
             <Field
               name='confirmPassword'
               type='password'
               placeholder='Confirm password'
+              arialabel='Confirm password'
               component={this.renderField}
             />
             <p className="landing__input--errortext">{this.renderAlert()}</p>
@@ -50,6 +54,7 @@ class SignUp extends Component {
       type={field.type}
       placeholder={field.placeholder}
       className={className}
+      aria-label={field.arialabel}
       key={1}
       />,
       <div key={2} className="landing__input--errortext">
