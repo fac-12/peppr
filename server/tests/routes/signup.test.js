@@ -1,11 +1,11 @@
 const test = require('tape');
 const request = require('supertest');
-const app = require('../app');
-const dbBuild = require('../database/db_build');
+const app = require('../../app');
+const dbBuild = require('../../database/db_build');
 
 const signUpTest = () => {
 
-  test('test for signup route', t => {
+  test('Routes: test for signup route', t => {
     const alreadyExists = {name:'Jim', email: 'jim@gmail.com', password: 'password'};
     const invalidSignUp = {name:'', email: '', password:'zxcvb'};
     const validSignUp = {name:'Tunde', email:'tunde@gmail.com', password:'password'};

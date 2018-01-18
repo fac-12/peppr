@@ -1,7 +1,7 @@
-const signInTest = require('./signin.test');
-const signUpTest = require('./signup.test');
-const getUserTest = require('./getuser.test');
-const urlScraperTest = require('./urlscraper.test');
+const signInTest = require('./routes/signin.test');
+const signUpTest = require('./routes/signup.test');
+const getUserTest = require('./routes/getuser.test');
+const urlScraperTest = require('./routes/urlscraper.test');
 
 signInTest();
 signUpTest();

@@ -6,7 +6,7 @@
     "scripts": {
         "start": "node ./server/server.js",
         "start-test": "NODE_ENV=production node ./server/server.js",
-        "test": "NODE_ENV=test tape ./server/tests/routes.test.js | tap-spec",
+        "test": "NODE_ENV=test tape ./server/tests/*.test.js | tap-spec",
         "client": "node start-client.js",
         "server": "nodemon ./server/server.js",
         "dev": "concurrently \"npm run server\" \"npm run client\""

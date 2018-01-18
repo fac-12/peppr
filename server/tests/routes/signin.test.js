@@ -1,10 +1,10 @@
 const test = require('tape');
 const request = require('supertest');
-const app = require('../app');
-const dbBuild = require('../database/db_build');
+const app = require('../../app');
+const dbBuild = require('../../database/db_build');
 
 const signInTest = () => {
-  test('test for signin route', t => {
+  test('Routes: test for signin route', t => {
     const invalidLogin = {email: 'qwerty', password:'asdfg'};
     const invalidPassword = {email: 'jim@gmail.com', password:'zxcvb'};
     const validLogin = {email:'jim@gmail.com', password:'password'};

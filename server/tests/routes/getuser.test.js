@@ -1,10 +1,10 @@
 const test = require('tape');
 const request = require('supertest');
-const app = require('../app');
-const dbBuild = require('../database/db_build');
+const app = require('../../app');
+const dbBuild = require('../../database/db_build');
 
 const getUserTest = () => {
-  test('test for getuser route', t => {
+  test('Routes: test for getuser route', t => {
     const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlhdCI6MTUxNjI2OTY3NzgzMn0.zuVeFStyNFLJDo-Qw4g3YRTwqR6xhlipfQCMRdL1BJE"
     dbBuild(() => {
       request(app)
