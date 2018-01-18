@@ -114,12 +114,13 @@
     $ Recipe List
     ***********************************************/
     .recipeList__title {
-        display: block;
-        color: black;
-        margin-top: 100px;
-        margin-bottom: 50px;
-        margin-left: 20px;
+      display: block;
+      color: black;
+      margin-top: 100px;
+      margin-bottom: 50px;
     }
+
+
     .recipeList__allrecipes {
         margin-bottom: 0;
     }
@@ -127,6 +128,15 @@
         width: 300px;
         margin: 10px;
     }
+
+    .recipeList__link--container {
+      margin-bottom: 0;
+    }
+
+    .recipeList__hidden-2x2 {
+      display: none;
+    }
+
     /***********************************************
     $ Add recipe
     ***********************************************/
@@ -215,4 +225,11 @@
         color: white;
         background: rgba(214, 71, 44, 0.95);
     }
+
+}
+
+@media (min-width:979px) {
+  .recipeList__hidden-2x2 {
+    display: block;
+  }
 }
