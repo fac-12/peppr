@@ -385,6 +385,13 @@ a:hover {
     transform: scale(1.03);
 }
 
+.recipeList__link--innercontainer {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  height: 50px;
+}
+
 .recipeList__link {
     width: 100%;
     text-decoration: none;
@@ -400,12 +407,11 @@ a:hover {
 }
 
 .recipeList__recipeTitle {
-    padding: 15px;
     font-size: 15px;
+    margin-left: 15px;
     color: #4F4F4F;
-    background: rgba(255, 255, 255, 0.95);
+    width: 80%;
 }
-
 
 /***********************************************
   $ Single Recipe
