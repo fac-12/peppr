@@ -11,7 +11,9 @@ class RecipeList extends Component {
       return (
         <Link to={`/recipes/${recipe.id}`} className='recipeList__link recipelist--overlay' key={recipe.id}>
           <div className='recipeList__link--container' style={{backgroundImage: `linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(${recipe.imageurl})`}}>
-            <h2 className='recipeList__recipeTitle'>{recipe.title}</h2>
+            <div className="recipeList__link--innercontainer">
+              <h2 className='recipeList__recipeTitle'>{recipe.title}</h2>
+            </div>
           </div>
         </Link>
       );
