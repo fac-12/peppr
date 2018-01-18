@@ -4,26 +4,30 @@ import { connect } from "react-redux";
 import { checkUrl } from "../../actions/recipes";
 import { Link } from 'react-router-dom';
 
-class UrlForm extends Component {
+import goodfood from '../../assets/images/goodfood.png'
+import delicious from '../../assets/images/delicious.png'
+import jamieoliver from '../../assets/images/jamieoliver.png'
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      showModal: false
-    };
-  }
+class UrlForm extends Component {
 
   render() {
     const { handleSubmit } = this.props;
     return (
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-          <p className="urlform__text">Enter a recipe URL from one of our <Link to="#" onClick={this.toggleModal.bind(this)}>partner sites</Link> to save the recipe automatically:</p>
-          {this.renderModal()}
+          <p className="urlform__text">Enter a recipe URL from one of our partner sites to save the recipe automatically:</p>
           <Field
             name="url"
             component={this.renderField}
           /> 
           {this.renderAlert()}
+          <div className="urlform__modal">
+            <p>Our partner sites are:</p>
+            <div className="urlform__modal__imagecontainer">
+            <img src={goodfood}/>
+            <img src={jamieoliver}/>
+            <img src={delicious}/>
+            </div>
+          </div> 
         </form>
     );
   }
@@ -32,16 +36,20 @@ class UrlForm extends Component {
     const { meta: { touched, error } } = field;
 
     return (
-      <div className="urlform">
-        <label>{field.label}</label>
-        <input 
-        className="urlform__input" 
-        type="url" {...field.input} 
-        placeholder="Enter URL"/>
-        <button type="submit"><i className="ion-ios-download urlform__btn"></i></button>
-        <div>
-          {touched ? error : ""}
-        </div>
+      <div>
+        <div className="urlform">
+          <label>{field.label}</label>
+          <input 
+          className="urlform__input" 
+          type="url" {...field.input} 
+          placeholder="Enter URL"/>
+          <button type="submit" className="urlform__btn">
+            <i className="ion-ios-download urlform__btn__icon"></i>
+          </button>
+          </div>
+          <p className="urlform__input--errortext">
+            {touched ? error : ""}
+          </p>
       </div>
     )
   }
@@ -53,25 +61,9 @@ class UrlForm extends Component {
   renderAlert(){
     if (this.props.error){
       return (
-          <p>
+          <p className="urlform__input--errortext">
             <strong>Oops!</strong> {this.props.error}
           </p>
-      );
-    }
-  }
-
-  toggleModal(){
-    this.state.showModal ? this.setState({showModal: false}) : this.setState({showModal: true})
-  }  
-
-  renderModal(){
-    if (this.state.showModal){
-      return (
-        <div className="urlform__modal">
-          <p>BBC Good Food</p>
-          <p>Delicious Magazine</p>
-          <p>Jamie Oliver</p>
-        </div>  
       );
     }
   }

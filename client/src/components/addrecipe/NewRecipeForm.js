@@ -52,10 +52,10 @@ class NewRecipeForm extends Component {
     return (
       <div className="newrecipe__form">
         {field.textfield
-        ? <textarea
-          rows="8"
-          cols="50"
-          className="newrecipe__textarea"
+        ? <textarea 
+          rows="4" 
+          cols="50" 
+          className="newrecipe__textarea" 
           placeholder={field.placeholder}
           {...field.input} />
         : <input
@@ -63,9 +63,9 @@ class NewRecipeForm extends Component {
             className="newrecipe__input"
             placeholder={field.placeholder}
             {...field.input} />}
-        <div>
+        <p className="newrecipe__input--errortext">
           {touched ? error : ""}
-        </div>
+        </p>
       </div>
     )
   }
