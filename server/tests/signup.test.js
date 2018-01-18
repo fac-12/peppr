@@ -14,6 +14,7 @@ const signUpTest = () => {
         .post('/signup')
         .send(alreadyExists)
         .end((err, res) => {
+          t.error(err);
           t.equal(res.status, 422, 'Email in use should return 422 status');
           t.equal(res.body.error, 'Email is in use. Please login', 'Should return error message saying email is in use');
         });
@@ -22,6 +23,7 @@ const signUpTest = () => {
         .post('/signup')
         .send(invalidSignUp)
         .end((err, res) => {
+          t.error(err);
           t.equal(res.status, 422, 'invalid signup details should return` 422 status');
           t.equal(res.body.error, 'You must provide a name, email and password', 'user details missing should return an error message');
         });
@@ -32,6 +34,7 @@ const signUpTest = () => {
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
+          t.error(err);
           t.equal(res.body.hasOwnProperty('token'), true, 'response object should have a property "token"');
           t.end();
         });
