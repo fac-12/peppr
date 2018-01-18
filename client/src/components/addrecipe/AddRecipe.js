@@ -17,12 +17,12 @@ class AddRecipe extends Component {
         <Banner title={"Add a recipe"}/>
         <img className="addrecipe__image" alt="red peppers on a dark background" src={peppers}/>
         <div className="addrecipe__container">
-          <h1 className="addrecipe__header">Add a Recipe</h1>
+          <h1 className="addrecipe__header addrecipe__innermargin">Add a Recipe</h1>
           <UrlForm />
           <Link
           to='#'
           onClick={this.showRecipeForm.bind(this)}
-          className="addrecipe__link"
+          className="addrecipe__link addrecipe__innermargin"
           >Or enter your recipe details manually</Link>
           {this.props.show ? <NewRecipeForm /> : <div></div>}
         </div>
