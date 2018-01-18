@@ -26,7 +26,7 @@ class AddRecipe extends Component {
           >Or enter your recipe details manually</Link>
           {this.props.show ? <NewRecipeForm /> : <div></div>}
         </div>
-        <Navbar />
+        <Navbar page={"addRecipe"}/>
       </div>
     );
   }

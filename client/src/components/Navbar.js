@@ -5,8 +5,22 @@ import { connect } from 'react-redux';
 
 class Navbar extends Component {
   render() {
+    
+    let className = "";
+    console.log(this.props.page)
+    switch(this.props.page){
+      case "singleRecipe":
+        className = "navbar navbar-mobile-hidden";
+        break;
+      case "addRecipe":
+        className = "navbar addrecipe__navbar";
+        break;
+      default:
+        className = "navbar"  
+    }
+
     return (
-    <nav className={this.props.singlePage ? 'navbar navbar-mobile-hidden' : 'navbar'}>
+    <nav className={className}>
       <ul>
         <li className="navbar__homelogo" >
           <Link to='/recipes'>
