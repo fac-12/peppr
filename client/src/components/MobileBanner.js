@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import history from '../actions/history';
 
 class Banner extends Component {
   render() {
