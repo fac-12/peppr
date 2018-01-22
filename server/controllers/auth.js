@@ -3,8 +3,7 @@ const { hashPassword } = require('../services/bcrypt');
 const jwt = require('jwt-simple');
 
 const userToken = (user) => {
-  const timestamp = new Date().getTime();
-  return jwt.encode({ sub: user.id, iat: timestamp }, process.env.SECRET);
+  return jwt.encode({ sub: user.id }, process.env.SECRET);
 }
 
 

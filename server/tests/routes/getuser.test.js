@@ -5,7 +5,7 @@ const dbBuild = require('../../database/db_build');
 
 const getUserTest = () => {
   test('Routes: test for getuser route', t => {
-    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlhdCI6MTUxNjI2OTY3NzgzMn0.zuVeFStyNFLJDo-Qw4g3YRTwqR6xhlipfQCMRdL1BJE"
+    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjJ9.HMoOEdhfc2lPj11Y_Tu7_4BcvL4g263YLlhXMSYj7FA"
     dbBuild(() => {
       request(app)
         .get('/getuser')
